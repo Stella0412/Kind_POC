@@ -22,10 +22,8 @@ D:\docker_project\
 │   ├── logs\            命令输出与排障日志
 │   ├── reports\         压测与验证报告
 │   └── kubeconfig       Kind 集群配置（创建集群后生成）
-└── notes\               每日记录
-    ├── day0.md
-    ├── day1.md / day1-plan.md
-    └── day2.md / day2-plan.md
+└── notes\               项目说明
+    └── project-overview.md
 ```
 
 ## 每次打开新终端
