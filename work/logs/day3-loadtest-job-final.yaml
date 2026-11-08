@@ -1,0 +1,98 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"batch/v1","kind":"Job","metadata":{"annotations":{},"name":"loadtest-stepped","namespace":"qa-helm"},"spec":{"backoffLimit":0,"template":{"spec":{"containers":[{"command":["/bin/sh","-c","set -e\nfor u in 20 50 100; do\n  echo \"=== users=$u start $(date -Is) ===\"\n  locust -f /locust/locustfile-fast.py \\\n    --host=http://frontend:80 \\\n    --headless -u \"$u\" -r 10 --run-time 3m \\\n    --only-summary --csv=/tmp/stats-$u \\\n    --exit-code-on-error 0\n  echo \"=== users=$u end $(date -Is) ===\"\n  sleep 120\ndone\n"],"image":"gcr.io/google-samples/microservices-demo/loadgenerator:v0.3.1","imagePullPolicy":"IfNotPresent","name":"main","resources":{"limits":{"cpu":"2","memory":"512Mi"},"requests":{"cpu":"500m","memory":"256Mi"}},"volumeMounts":[{"mountPath":"/locust","name":"locustfile"}]}],"restartPolicy":"Never","volumes":[{"configMap":{"name":"locustfile-fast"},"name":"locustfile"}]}}}}
+  creationTimestamp: "2026-10-31T14:16:02Z"
+  generation: 1
+  labels:
+    batch.kubernetes.io/controller-uid: 5816ab8d-6fba-43d8-bbee-76eca0a3bce7
+    batch.kubernetes.io/job-name: loadtest-stepped
+    controller-uid: 5816ab8d-6fba-43d8-bbee-76eca0a3bce7
+    job-name: loadtest-stepped
+  name: loadtest-stepped
+  namespace: qa-helm
+  resourceVersion: "28685"
+  uid: 5816ab8d-6fba-43d8-bbee-76eca0a3bce7
+spec:
+  backoffLimit: 0
+  completionMode: NonIndexed
+  completions: 1
+  manualSelector: false
+  parallelism: 1
+  podReplacementPolicy: TerminatingOrFailed
+  selector:
+    matchLabels:
+      batch.kubernetes.io/controller-uid: 5816ab8d-6fba-43d8-bbee-76eca0a3bce7
+  suspend: false
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        batch.kubernetes.io/controller-uid: 5816ab8d-6fba-43d8-bbee-76eca0a3bce7
+        batch.kubernetes.io/job-name: loadtest-stepped
+        controller-uid: 5816ab8d-6fba-43d8-bbee-76eca0a3bce7
+        job-name: loadtest-stepped
+    spec:
+      containers:
+      - command:
+        - /bin/sh
+        - -c
+        - |
+          set -e
+          for u in 20 50 100; do
+            echo "=== users=$u start $(date -Is) ==="
+            locust -f /locust/locustfile-fast.py \
+              --host=http://frontend:80 \
+              --headless -u "$u" -r 10 --run-time 3m \
+              --only-summary --csv=/tmp/stats-$u \
+              --exit-code-on-error 0
+            echo "=== users=$u end $(date -Is) ==="
+            sleep 120
+          done
+        image: gcr.io/google-samples/microservices-demo/loadgenerator:v0.3.1
+        imagePullPolicy: IfNotPresent
+        name: main
+        resources:
+          limits:
+            cpu: "2"
+            memory: 512Mi
+          requests:
+            cpu: 500m
+            memory: 256Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /locust
+          name: locustfile
+      dnsPolicy: ClusterFirst
+      restartPolicy: Never
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: locustfile-fast
+        name: locustfile
+status:
+  completionTime: "2026-10-31T14:31:07Z"
+  conditions:
+  - lastProbeTime: "2026-10-31T14:31:07Z"
+    lastTransitionTime: "2026-10-31T14:31:07Z"
+    message: Reached expected number of succeeded pods
+    reason: CompletionsReached
+    status: "True"
+    type: SuccessCriteriaMet
+  - lastProbeTime: "2026-10-31T14:31:07Z"
+    lastTransitionTime: "2026-10-31T14:31:07Z"
+    message: Reached expected number of succeeded pods
+    reason: CompletionsReached
+    status: "True"
+    type: Complete
+  ready: 0
+  startTime: "2026-10-31T14:16:02Z"
+  succeeded: 1
+  terminating: 0
+  uncountedTerminatedPods: {}

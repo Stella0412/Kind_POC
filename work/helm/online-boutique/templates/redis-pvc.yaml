@@ -1,0 +1,15 @@
+{{- if .Values.redisPersistence.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis-data
+  labels:
+    {{- include "online-boutique.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.redisPersistence.storageClassName }}
+  resources:
+    requests:
+      storage: {{ .Values.redisPersistence.size }}
+{{- end }}

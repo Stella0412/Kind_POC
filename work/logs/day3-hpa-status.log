@@ -1,0 +1,4 @@
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: <unknown>/50%   1         4         0          0s
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          20s

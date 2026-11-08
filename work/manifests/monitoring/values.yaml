@@ -1,0 +1,61 @@
+# kube-prometheus-stack values for the local Kind POC (1 worker, 7.6 GiB VM).
+# Install:
+#   helm upgrade --install monitoring prometheus-community/kube-prometheus-stack \
+#     -n monitoring --create-namespace -f work/manifests/monitoring/values.yaml --timeout 10m
+#
+# Chart version used in Day 4: kube-prometheus-stack 92.16.1 (app v0.94.2).
+
+# 不部署 Alertmanager：本地没有真实通知渠道，告警只验证规则状态。
+alertmanager:
+  enabled: false
+
+prometheus:
+  prometheusSpec:
+    retention: 6h
+    resources:
+      requests:
+        cpu: 200m
+        memory: 768Mi
+      limits:
+        cpu: "1"
+        memory: 1Gi
+
+grafana:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: "1"
+      memory: 768Mi
+  # 本地 POC：开放匿名只读，便于免登录查看看板和无头浏览器截图。
+  # 生产环境不要这样配置。
+  grafana.ini:
+    auth.anonymous:
+      enabled: true
+      org_name: Main Org.
+      org_role: Viewer
+
+prometheus-node-exporter:
+  resources:
+    requests:
+      memory: 32Mi
+    limits:
+      memory: 64Mi
+
+kube-state-metrics:
+  resources:
+    requests:
+      memory: 64Mi
+    limits:
+      memory: 256Mi
+
+# Kind 不暴露这些控制面组件，关闭对应抓取以避免无效 target。
+kubeEtcd:
+  enabled: false
+kubeControllerManager:
+  enabled: false
+kubeScheduler:
+  enabled: false
+kubeProxy:
+  enabled: false

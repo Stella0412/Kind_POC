@@ -1,0 +1,46 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-deploy-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone upstream source
+        run: |
+          git clone --depth 1 --branch v0.3.4 \
+            https://github.com/GoogleCloudPlatform/microservices-demo.git \
+            repos/microservices-demo
+
+      - uses: helm/kind-action@v1
+        with:
+          cluster_name: qa-cluster
+          config: work/kind/config.yaml
+
+      - uses: azure/setup-helm@v4
+        with:
+          version: v3.14.0
+
+      - name: Build frontend image
+        run: |
+          bash work/docker/frontend/prepare-context.sh
+          docker build --platform linux/amd64 \
+            -f work/docker/frontend/Dockerfile.day2 \
+            -t local/frontend:day2 work/docker/frontend/context
+
+      # 与本地 reproduce.sh 走同一条路径：先拉齐 13 个镜像，再一次性导入。
+      # 避免 11 个项目镜像在 helm --wait 期间由 kubelet 逐个从 gcr.io 拉取。
+      - name: Pull and load all images
+        run: |
+          PULL=1 CLUSTER=qa-cluster TAG=day2 bash work/scripts/load-images.sh
+
+      - name: Deploy, verify and smoke test
+        run: |
+          CLUSTER=qa-cluster NAMESPACE=qa-helm TAG=day2 bash work/scripts/deploy.sh
+          bash work/scripts/verify.sh
+          bash work/scripts/smoke-test.sh

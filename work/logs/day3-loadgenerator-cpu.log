@@ -1,0 +1,29 @@
+=== 2026-10-31T22:36:24+08:00 ===
+--- sample 1 2026-10-31T22:36:24+08:00 ---
+error: metrics not available yet
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          37m
+--- sample 2 2026-10-31T22:36:40+08:00 ---
+error: metrics not available yet
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          37m
+--- sample 3 2026-10-31T22:36:55+08:00 ---
+NAME                     CPU(cores)   MEMORY(bytes)   
+locust-cpu-probe-lrhqn   110m         48Mi            
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 120%/50%   1         4         1          37m
+--- sample 4 2026-10-31T22:37:11+08:00 ---
+NAME                     CPU(cores)   MEMORY(bytes)   
+locust-cpu-probe-lrhqn   104m         51Mi            
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 200%/50%   1         4         2          38m
+--- sample 5 2026-10-31T22:37:26+08:00 ---
+NAME                     CPU(cores)   MEMORY(bytes)   
+locust-cpu-probe-lrhqn   110m         49Mi            
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 201%/50%   1         4         2          38m
+--- sample 6 2026-10-31T22:37:42+08:00 ---
+NAME                     CPU(cores)   MEMORY(bytes)   
+locust-cpu-probe-lrhqn   105m         51Mi            
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 99%/50%   1         4         3          38m

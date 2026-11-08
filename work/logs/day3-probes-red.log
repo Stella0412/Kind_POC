@@ -1,0 +1,24 @@
+adservice-58c8d74f7b-f2v8q	2	true
+cartservice-6d9698b854-ftkrq	2	true
+checkoutservice-85988c9df-8q8wn	1	true
+currencyservice-df5c847bf-kjqtb	1	true
+emailservice-5947c5d46c-wgmkb	1	true
+frontend-85944f8cf4-h9dqm	1	true
+loadgenerator-hfwrr	0	false
+paymentservice-687f89b58f-nnfwg	1	true
+productcatalogservice-58f5dfdf89-d68nc	1	true
+recommendationservice-7c767c85cc-l72xm	1	true
+redis-cart-6d7f874d5d-77l6m	1	true
+shippingservice-688dc9968f-lzzt6	1	true
+15m         Warning   Unhealthy           pod/emailservice-5947c5d46c-wgmkb            Liveness probe failed: command timed out: "/bin/grpc_health_probe -addr=:8080" timed out after 1s
+15m         Warning   Unhealthy           pod/paymentservice-687f89b58f-nnfwg          Readiness probe failed: command timed out: "/bin/grpc_health_probe -addr=:50051" timed out after 1s
+15m         Warning   Unhealthy           pod/paymentservice-687f89b58f-nnfwg          Liveness probe failed: command timed out: "/bin/grpc_health_probe -addr=:50051" timed out after 1s
+15m         Warning   Unhealthy           pod/currencyservice-df5c847bf-kjqtb          Readiness probe failed: command timed out: "/bin/grpc_health_probe -addr=:7000" timed out after 1s
+15m         Warning   Unhealthy           pod/recommendationservice-7c767c85cc-l72xm   Readiness probe failed: command timed out: "/bin/grpc_health_probe -addr=:8080" timed out after 1s
+14m         Normal    Killing             pod/cartservice-6d9698b854-ftkrq             Container server failed liveness probe, will be restarted
+14m         Warning   Unhealthy           pod/cartservice-6d9698b854-ftkrq             Readiness probe failed: command timed out: "/bin/grpc_health_probe -addr=:7070 -rpc-timeout=5s" timed out after 1s
+14m         Warning   Unhealthy           pod/cartservice-6d9698b854-ftkrq             Liveness probe failed: command timed out: "/bin/grpc_health_probe -addr=:7070 -rpc-timeout=5s" timed out after 1s
+14m         Normal    Killing             pod/adservice-58c8d74f7b-f2v8q               Container server failed liveness probe, will be restarted
+14m         Warning   Unhealthy           pod/adservice-58c8d74f7b-f2v8q               Readiness probe errored: rpc error: code = Unknown desc = failed to exec in container: failed to start exec "adaf937b0f60d79318f473493176575d47a282e554282a048ca7a2409164964e": OCI runtime exec failed: exec failed: cannot exec in a stopped container
+14m         Warning   Unhealthy           pod/adservice-58c8d74f7b-f2v8q               Liveness probe failed: command timed out: "/bin/grpc_health_probe -addr=:9555" timed out after 1s
+14m         Warning   Unhealthy           pod/adservice-58c8d74f7b-f2v8q               Readiness probe failed: command timed out: "/bin/grpc_health_probe -addr=:9555" timed out after 1s

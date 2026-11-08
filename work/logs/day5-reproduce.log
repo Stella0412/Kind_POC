@@ -1,0 +1,93 @@
+[reproduce] start 2026-11-01T09:41:13+08:00
+Creating cluster "qa-cluster" ...
+ • Ensuring node image (kindest/node:v1.32.2) 🖼️  ...
+ ✓ Ensuring node image (kindest/node:v1.32.2) 🖼️
+ • Preparing nodes 📦 📦   ...
+ ✓ Preparing nodes 📦 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Joining worker nodes 🚜  ...
+ ✓ Joining worker nodes 🚜
+Set kubectl context to "kind-qa-cluster"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-qa-cluster
+
+Have a nice day! 👋
+node/qa-cluster-control-plane condition met
+node/qa-cluster-worker condition met
+[reproduce] cluster ready: 50s (total 50s)
+[reproduce] images loaded: 79s (total 129s)
+serviceaccount/metrics-server created
+clusterrole.rbac.authorization.k8s.io/system:aggregated-metrics-reader created
+clusterrole.rbac.authorization.k8s.io/system:metrics-server created
+rolebinding.rbac.authorization.k8s.io/metrics-server-auth-reader created
+clusterrolebinding.rbac.authorization.k8s.io/metrics-server:system:auth-delegator created
+clusterrolebinding.rbac.authorization.k8s.io/system:metrics-server created
+service/metrics-server created
+deployment.apps/metrics-server created
+apiservice.apiregistration.k8s.io/v1beta1.metrics.k8s.io created
+deployment.apps/metrics-server patched
+Waiting for deployment "metrics-server" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "metrics-server" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "metrics-server" rollout to finish: 1 old replicas are pending termination...
+deployment "metrics-server" successfully rolled out
+NAME                       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+qa-cluster-control-plane   171m         0%       1344Mi          17%         
+qa-cluster-worker          208m         0%       923Mi           11%         
+[reproduce] metrics-server ready: 45s (total 174s)
+Release "online-boutique" does not exist. Installing it now.
+NAME: online-boutique
+LAST DEPLOYED: Sun Nov  1 09:44:08 2026
+NAMESPACE: qa-helm
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+Online Boutique 已部署到命名空间 qa-helm。
+
+查看状态：
+  kubectl get pods -n qa-helm
+  kubectl get endpoints -n qa-helm
+
+访问前端：
+  kubectl port-forward -n qa-helm svc/frontend 8080:80
+  浏览器打开 http://localhost:8080
+
+当前 frontend 镜像：
+  local/frontend:day2
+deployment "frontend" successfully rolled out
+[reproduce] app deployed: 27s (total 201s)
+NAME                       STATUS   ROLES           AGE     VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION                      CONTAINER-RUNTIME
+qa-cluster-control-plane   Ready    control-plane   3m1s    v1.32.2   172.21.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+qa-cluster-worker          Ready    <none>          2m47s   v1.32.2   172.21.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+NAME                                     READY   STATUS    RESTARTS   AGE
+adservice-75968447cd-zsffl               1/1     Running   0          26s
+cartservice-77cb898dd4-5br2m             1/1     Running   0          26s
+checkoutservice-674999b5c7-xl575         1/1     Running   0          26s
+currencyservice-86f586d9c7-wtttw         1/1     Running   0          26s
+emailservice-7c575df669-gvtwj            1/1     Running   0          26s
+frontend-769c57d47d-9s25h                1/1     Running   0          25s
+paymentservice-68dcddb59-jhdg4           1/1     Running   0          26s
+productcatalogservice-84469965d9-pwn9r   1/1     Running   0          26s
+recommendationservice-5d9cb49bbd-j7vr8   1/1     Running   0          26s
+redis-cart-5bc545b94-w6zwc               1/1     Running   0          26s
+shippingservice-6c465dd9c9-vmlpk         1/1     Running   0          26s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: <unknown>/50%   1         4         1          26s
+NAME           	NAMESPACE	REVISION	UPDATED                              	STATUS  	CHART                	APP VERSION
+online-boutique	qa-helm  	1       	2026-11-01 09:44:08.8833853 +0800 CST	deployed	online-boutique-0.1.0	0.3.4      
+VERIFY OK: all services have endpoints
+[reproduce] verify: 5s (total 206s)
+SMOKE OK: homepage / product / cart / checkout
+[reproduce] smoke: 3s (total 209s)
+REPRODUCE_SECONDS=209
+REPRODUCE OK
+REPRODUCE_SECONDS_EXTERNAL=210

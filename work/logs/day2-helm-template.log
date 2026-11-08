@@ -1,0 +1,923 @@
+---
+# Source: online-boutique/templates/frontend-external.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-external
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: frontend
+spec:
+  type: LoadBalancer
+  selector:
+    app: frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: adservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: adservice
+spec:
+  type: ClusterIP
+  selector:
+    app: adservice
+  ports:
+    - name: grpc
+      port: 9555
+      targetPort: 9555
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: cartservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: cartservice
+spec:
+  type: ClusterIP
+  selector:
+    app: cartservice
+  ports:
+    - name: grpc
+      port: 7070
+      targetPort: 7070
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: checkoutservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: checkoutservice
+spec:
+  type: ClusterIP
+  selector:
+    app: checkoutservice
+  ports:
+    - name: grpc
+      port: 5050
+      targetPort: 5050
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: currencyservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: currencyservice
+spec:
+  type: ClusterIP
+  selector:
+    app: currencyservice
+  ports:
+    - name: grpc
+      port: 7000
+      targetPort: 7000
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: emailservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: emailservice
+spec:
+  type: ClusterIP
+  selector:
+    app: emailservice
+  ports:
+    - name: grpc
+      port: 5000
+      targetPort: 8080
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: paymentservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: paymentservice
+spec:
+  type: ClusterIP
+  selector:
+    app: paymentservice
+  ports:
+    - name: grpc
+      port: 50051
+      targetPort: 50051
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: productcatalogservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: productcatalogservice
+spec:
+  type: ClusterIP
+  selector:
+    app: productcatalogservice
+  ports:
+    - name: grpc
+      port: 3550
+      targetPort: 3550
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: recommendationservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: recommendationservice
+spec:
+  type: ClusterIP
+  selector:
+    app: recommendationservice
+  ports:
+    - name: grpc
+      port: 8080
+      targetPort: 8080
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-cart
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: redis-cart
+spec:
+  type: ClusterIP
+  selector:
+    app: redis-cart
+  ports:
+    - name: redis
+      port: 6379
+      targetPort: 6379
+
+---
+# Source: online-boutique/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: shippingservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: shippingservice
+spec:
+  type: ClusterIP
+  selector:
+    app: shippingservice
+  ports:
+    - name: grpc
+      port: 50051
+      targetPort: 50051
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: adservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adservice
+  template:
+    metadata:
+      labels:
+        app: adservice
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: server
+          image: "gcr.io/google-samples/microservices-demo/adservice:v0.3.4"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9555
+          env:
+            - name: PORT
+              value: "9555"
+          resources:
+            limits:
+              cpu: 300m
+              memory: 300Mi
+            requests:
+              cpu: 200m
+              memory: 180Mi
+          readinessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:9555
+            initialDelaySeconds: 20
+            periodSeconds: 15
+          livenessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:9555
+            initialDelaySeconds: 20
+            periodSeconds: 15
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cartservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: cartservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cartservice
+  template:
+    metadata:
+      labels:
+        app: cartservice
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: server
+          image: "gcr.io/google-samples/microservices-demo/cartservice:v0.3.1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 7070
+          env:
+            - name: REDIS_ADDR
+              value: "redis-cart:6379"
+          resources:
+            limits:
+              cpu: 300m
+              memory: 128Mi
+            requests:
+              cpu: 200m
+              memory: 64Mi
+          readinessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:7070
+              - -rpc-timeout=5s
+            initialDelaySeconds: 15
+          livenessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:7070
+              - -rpc-timeout=5s
+            initialDelaySeconds: 15
+            periodSeconds: 10
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkoutservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: checkoutservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: checkoutservice
+  template:
+    metadata:
+      labels:
+        app: checkoutservice
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: server
+          image: "gcr.io/google-samples/microservices-demo/checkoutservice:v0.3.1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5050
+          env:
+            - name: CART_SERVICE_ADDR
+              value: "cartservice:7070"
+            - name: CURRENCY_SERVICE_ADDR
+              value: "currencyservice:7000"
+            - name: EMAIL_SERVICE_ADDR
+              value: "emailservice:5000"
+            - name: PAYMENT_SERVICE_ADDR
+              value: "paymentservice:50051"
+            - name: PORT
+              value: "5050"
+            - name: PRODUCT_CATALOG_SERVICE_ADDR
+              value: "productcatalogservice:3550"
+            - name: SHIPPING_SERVICE_ADDR
+              value: "shippingservice:50051"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+          readinessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:5050
+          livenessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:5050
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currencyservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: currencyservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: currencyservice
+  template:
+    metadata:
+      labels:
+        app: currencyservice
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: server
+          image: "gcr.io/google-samples/microservices-demo/currencyservice:v0.3.1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 7000
+          env:
+            - name: PORT
+              value: "7000"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+          readinessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:7000
+          livenessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:7000
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emailservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: emailservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emailservice
+  template:
+    metadata:
+      labels:
+        app: emailservice
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: server
+          image: "gcr.io/google-samples/microservices-demo/emailservice:v0.3.1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DISABLE_PROFILER
+              value: "1"
+            - name: PORT
+              value: "8080"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+          readinessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:8080
+            periodSeconds: 5
+          livenessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:8080
+            periodSeconds: 5
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: server
+          image: "local/frontend:day2"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: AD_SERVICE_ADDR
+              value: "adservice:9555"
+            - name: CART_SERVICE_ADDR
+              value: "cartservice:7070"
+            - name: CHECKOUT_SERVICE_ADDR
+              value: "checkoutservice:5050"
+            - name: CURRENCY_SERVICE_ADDR
+              value: "currencyservice:7000"
+            - name: PORT
+              value: "8080"
+            - name: PRODUCT_CATALOG_SERVICE_ADDR
+              value: "productcatalogservice:3550"
+            - name: RECOMMENDATION_SERVICE_ADDR
+              value: "recommendationservice:8080"
+            - name: SHIPPING_SERVICE_ADDR
+              value: "shippingservice:50051"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+          readinessProbe:
+            httpGet:
+              httpHeaders:
+              - name: Cookie
+                value: shop_session-id=x-readiness-probe
+              path: /_healthz
+              port: 8080
+            initialDelaySeconds: 10
+          livenessProbe:
+            httpGet:
+              httpHeaders:
+              - name: Cookie
+                value: shop_session-id=x-liveness-probe
+              path: /_healthz
+              port: 8080
+            initialDelaySeconds: 10
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paymentservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: paymentservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paymentservice
+  template:
+    metadata:
+      labels:
+        app: paymentservice
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: server
+          image: "gcr.io/google-samples/microservices-demo/paymentservice:v0.3.1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 50051
+          env:
+            - name: PORT
+              value: "50051"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+          readinessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:50051
+          livenessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:50051
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productcatalogservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: productcatalogservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productcatalogservice
+  template:
+    metadata:
+      labels:
+        app: productcatalogservice
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: server
+          image: "gcr.io/google-samples/microservices-demo/productcatalogservice:v0.3.1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3550
+          env:
+            - name: PORT
+              value: "3550"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+          readinessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:3550
+          livenessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:3550
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendationservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: recommendationservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: recommendationservice
+  template:
+    metadata:
+      labels:
+        app: recommendationservice
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: server
+          image: "gcr.io/google-samples/microservices-demo/recommendationservice:v0.3.1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080"
+            - name: PRODUCT_CATALOG_SERVICE_ADDR
+              value: "productcatalogservice:3550"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 450Mi
+            requests:
+              cpu: 100m
+              memory: 220Mi
+          readinessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:8080
+            periodSeconds: 5
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-cart
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: redis-cart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-cart
+  template:
+    metadata:
+      labels:
+        app: redis-cart
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: redis
+          image: "redis:7.4-alpine"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 6379
+          resources:
+            limits:
+              cpu: 125m
+              memory: 256Mi
+            requests:
+              cpu: 70m
+              memory: 200Mi
+          readinessProbe:
+            periodSeconds: 5
+            tcpSocket:
+              port: 6379
+          livenessProbe:
+            periodSeconds: 5
+            tcpSocket:
+              port: 6379
+          volumeMounts:
+            - mountPath: /data
+              name: redis-data
+      volumes:
+        - name: redis-data
+          emptyDir: {}
+
+---
+# Source: online-boutique/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shippingservice
+  labels:
+    app.kubernetes.io/name: online-boutique
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    helm.sh/chart: online-boutique-0.1.0
+    app: shippingservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shippingservice
+  template:
+    metadata:
+      labels:
+        app: shippingservice
+        app.kubernetes.io/name: online-boutique
+        app.kubernetes.io/instance: online-boutique
+        app.kubernetes.io/managed-by: Helm
+        helm.sh/chart: online-boutique-0.1.0
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      nodeSelector:
+        kubernetes.io/hostname: qa-cluster-worker
+      containers:
+        - name: server
+          image: "gcr.io/google-samples/microservices-demo/shippingservice:v0.3.1"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 50051
+          env:
+            - name: PORT
+              value: "50051"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+          readinessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:50051
+            periodSeconds: 5
+          livenessProbe:
+            exec:
+              command:
+              - /bin/grpc_health_probe
+              - -addr=:50051

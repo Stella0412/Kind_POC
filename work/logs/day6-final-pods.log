@@ -1,0 +1,12 @@
+NAME                                     READY   STATUS    RESTARTS        AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+adservice-75968447cd-mpjlx               1/1     Running   2 (4m38s ago)   9h    10.244.1.5    qa-cluster-worker   <none>           <none>
+cartservice-77cb898dd4-sfdph             1/1     Running   0               9h    10.244.1.10   qa-cluster-worker   <none>           <none>
+checkoutservice-674999b5c7-d7glm         1/1     Running   0               9h    10.244.1.8    qa-cluster-worker   <none>           <none>
+currencyservice-86f586d9c7-cxcdt         1/1     Running   0               9h    10.244.1.7    qa-cluster-worker   <none>           <none>
+emailservice-7c575df669-xck6r            1/1     Running   0               9h    10.244.1.13   qa-cluster-worker   <none>           <none>
+frontend-769c57d47d-w2wt2                1/1     Running   0               9h    10.244.1.14   qa-cluster-worker   <none>           <none>
+paymentservice-68dcddb59-xjzld           1/1     Running   0               9h    10.244.1.9    qa-cluster-worker   <none>           <none>
+productcatalogservice-84469965d9-5z8sd   1/1     Running   0               9h    10.244.1.4    qa-cluster-worker   <none>           <none>
+recommendationservice-5d9cb49bbd-tflmc   1/1     Running   0               9h    10.244.1.11   qa-cluster-worker   <none>           <none>
+redis-cart-5bc545b94-76j9s               1/1     Running   0               9h    10.244.1.12   qa-cluster-worker   <none>           <none>
+shippingservice-6c465dd9c9-mnghn         1/1     Running   0               9h    10.244.1.6    qa-cluster-worker   <none>           <none>

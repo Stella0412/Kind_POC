@@ -1,0 +1,21 @@
+Release "online-boutique" has been upgraded. Happy Helming!
+NAME: online-boutique
+LAST DEPLOYED: Sat Oct 31 21:57:04 2026
+NAMESPACE: qa-helm
+STATUS: deployed
+REVISION: 6
+DESCRIPTION: Upgrade complete
+TEST SUITE: None
+NOTES:
+Online Boutique 已部署到命名空间 qa-helm。
+
+查看状态：
+  kubectl get pods -n qa-helm
+  kubectl get endpoints -n qa-helm
+
+访问前端：
+  kubectl port-forward -n qa-helm svc/frontend 8080:80
+  浏览器打开 http://localhost:8080
+
+当前 frontend 镜像：
+  local/frontend:day2

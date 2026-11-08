@@ -1,0 +1,47 @@
+===== 2026-10-31 20:24:10 nodes =====
+NAME                       STATUS   ROLES           AGE     VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION                      CONTAINER-RUNTIME
+qa-cluster-control-plane   Ready    control-plane   4h26m   v1.32.2   172.21.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+qa-cluster-worker          Ready    <none>          4h26m   v1.32.2   172.21.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+
+===== pods =====
+NAME                                     READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+adservice-f859d9cb-zwvwg                 1/1     Running   0          3m55s   10.244.1.5    qa-cluster-worker   <none>           <none>
+cartservice-577d6bdc74-pfpvp             1/1     Running   0          3m55s   10.244.1.4    qa-cluster-worker   <none>           <none>
+checkoutservice-76587d6cb9-6hgnf         1/1     Running   0          3m55s   10.244.1.2    qa-cluster-worker   <none>           <none>
+currencyservice-dc767c899-56kp8          1/1     Running   0          3m55s   10.244.1.3    qa-cluster-worker   <none>           <none>
+emailservice-7fffb69467-jhnjl            1/1     Running   0          3m55s   10.244.1.6    qa-cluster-worker   <none>           <none>
+frontend-8b95d687-rr8bs                  1/1     Running   0          2m9s    10.244.1.12   qa-cluster-worker   <none>           <none>
+paymentservice-58dfdcd8d5-zzq5f          1/1     Running   0          3m55s   10.244.1.8    qa-cluster-worker   <none>           <none>
+productcatalogservice-78ddcfc979-4gjjj   1/1     Running   0          3m55s   10.244.1.9    qa-cluster-worker   <none>           <none>
+recommendationservice-67b46ccd97-m6lhs   1/1     Running   0          2m8s    10.244.1.13   qa-cluster-worker   <none>           <none>
+redis-cart-6bd6b8ff77-wdk95              1/1     Running   0          3m55s   10.244.1.10   qa-cluster-worker   <none>           <none>
+shippingservice-5bccf967cc-wxwlb         1/1     Running   0          3m54s   10.244.1.11   qa-cluster-worker   <none>           <none>
+
+===== endpoints =====
+NAME                    ENDPOINTS           AGE
+adservice               10.244.1.5:9555     3m55s
+cartservice             10.244.1.4:7070     3m55s
+checkoutservice         10.244.1.2:5050     3m55s
+currencyservice         10.244.1.3:7000     3m55s
+emailservice            10.244.1.6:8080     3m55s
+frontend                10.244.1.12:8080    3m55s
+frontend-external       10.244.1.12:8080    3m55s
+paymentservice          10.244.1.8:50051    3m55s
+productcatalogservice   10.244.1.9:3550     3m55s
+recommendationservice   10.244.1.13:8080    3m55s
+redis-cart              10.244.1.10:6379    3m55s
+shippingservice         10.244.1.11:50051   3m55s
+
+===== deployments =====
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+adservice               1/1     1            1           3m55s
+cartservice             1/1     1            1           3m55s
+checkoutservice         1/1     1            1           3m55s
+currencyservice         1/1     1            1           3m55s
+emailservice            1/1     1            1           3m55s
+frontend                1/1     1            1           3m55s
+paymentservice          1/1     1            1           3m55s
+productcatalogservice   1/1     1            1           3m55s
+recommendationservice   1/1     1            1           3m55s
+redis-cart              1/1     1            1           3m55s
+shippingservice         1/1     1            1           3m55s

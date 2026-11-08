@@ -1,0 +1,84 @@
+NAME                                         READY   STATUS      RESTARTS     AGE
+pod/adservice-75968447cd-8ngn7               1/1     Running     3 (5m ago)   10h
+pod/cartservice-77cb898dd4-vnktn             1/1     Running     1 (5m ago)   11h
+pod/checkoutservice-674999b5c7-rt277         1/1     Running     1 (5m ago)   10h
+pod/currencyservice-86f586d9c7-l682q         1/1     Running     1 (5m ago)   10h
+pod/emailservice-7c575df669-v6j6d            1/1     Running     1 (5m ago)   10h
+pod/frontend-6bc5cfbcd6-tj74z                1/1     Running     1 (5m ago)   11h
+pod/loadgenerator-hfwrr                      0/1     Completed   0            12h
+pod/loadtest-smoke-p2bp6                     0/1     Completed   0            10h
+pod/loadtest-stepped-j9plp                   0/1     Completed   0            11h
+pod/paymentservice-68dcddb59-fmlpq           1/1     Running     1 (5m ago)   10h
+pod/productcatalogservice-84469965d9-7rtsk   1/1     Running     1 (5m ago)   10h
+pod/recommendationservice-5d9cb49bbd-ljz99   1/1     Running     1 (5m ago)   10h
+pod/redis-cart-5bc545b94-9cbll               1/1     Running     1 (5m ago)   11h
+pod/shippingservice-6c465dd9c9-twvcf         1/1     Running     1 (5m ago)   10h
+
+NAME                            TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+service/adservice               ClusterIP      10.96.189.6     <none>        9555/TCP       13h
+service/cartservice             ClusterIP      10.96.30.151    <none>        7070/TCP       13h
+service/checkoutservice         ClusterIP      10.96.118.165   <none>        5050/TCP       13h
+service/currencyservice         ClusterIP      10.96.246.70    <none>        7000/TCP       13h
+service/emailservice            ClusterIP      10.96.55.188    <none>        5000/TCP       13h
+service/frontend                ClusterIP      10.96.244.201   <none>        80/TCP         13h
+service/frontend-external       LoadBalancer   10.96.39.248    <pending>     80:30698/TCP   13h
+service/paymentservice          ClusterIP      10.96.186.150   <none>        50051/TCP      13h
+service/productcatalogservice   ClusterIP      10.96.118.104   <none>        3550/TCP       13h
+service/recommendationservice   ClusterIP      10.96.247.116   <none>        8080/TCP       13h
+service/redis-cart              ClusterIP      10.96.214.72    <none>        6379/TCP       13h
+service/shippingservice         ClusterIP      10.96.46.73     <none>        50051/TCP      13h
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/adservice               1/1     1            1           13h
+deployment.apps/cartservice             1/1     1            1           13h
+deployment.apps/checkoutservice         1/1     1            1           13h
+deployment.apps/currencyservice         1/1     1            1           13h
+deployment.apps/emailservice            1/1     1            1           13h
+deployment.apps/frontend                1/1     1            1           13h
+deployment.apps/paymentservice          1/1     1            1           13h
+deployment.apps/productcatalogservice   1/1     1            1           13h
+deployment.apps/recommendationservice   1/1     1            1           13h
+deployment.apps/redis-cart              1/1     1            1           13h
+deployment.apps/shippingservice         1/1     1            1           13h
+
+NAME                                               DESIRED   CURRENT   READY   AGE
+replicaset.apps/adservice-58c8d74f7b               0         0         0       13h
+replicaset.apps/adservice-5dd86985cc               0         0         0       11h
+replicaset.apps/adservice-75968447cd               1         1         1       10h
+replicaset.apps/cartservice-6d9698b854             0         0         0       13h
+replicaset.apps/cartservice-77cb898dd4             1         1         1       11h
+replicaset.apps/checkoutservice-674999b5c7         1         1         1       10h
+replicaset.apps/checkoutservice-85988c9df          0         0         0       13h
+replicaset.apps/checkoutservice-8d78b849           0         0         0       11h
+replicaset.apps/currencyservice-6cfc68c877         0         0         0       11h
+replicaset.apps/currencyservice-86f586d9c7         1         1         1       10h
+replicaset.apps/currencyservice-df5c847bf          0         0         0       13h
+replicaset.apps/emailservice-5947c5d46c            0         0         0       13h
+replicaset.apps/emailservice-7c575df669            1         1         1       10h
+replicaset.apps/emailservice-f89bf4f59             0         0         0       11h
+replicaset.apps/frontend-5d9c956d88                0         0         0       13h
+replicaset.apps/frontend-6bc5cfbcd6                1         1         1       11h
+replicaset.apps/frontend-85944f8cf4                0         0         0       12h
+replicaset.apps/frontend-db8d6fd7d                 0         0         0       12h
+replicaset.apps/paymentservice-687f89b58f          0         0         0       13h
+replicaset.apps/paymentservice-68dcddb59           1         1         1       10h
+replicaset.apps/paymentservice-77ff746969          0         0         0       11h
+replicaset.apps/productcatalogservice-57df9487b5   0         0         0       11h
+replicaset.apps/productcatalogservice-58f5dfdf89   0         0         0       13h
+replicaset.apps/productcatalogservice-84469965d9   1         1         1       10h
+replicaset.apps/recommendationservice-5d9cb49bbd   1         1         1       10h
+replicaset.apps/recommendationservice-6d9577546f   0         0         0       11h
+replicaset.apps/recommendationservice-7c767c85cc   0         0         0       13h
+replicaset.apps/redis-cart-5bc545b94               1         1         1       11h
+replicaset.apps/redis-cart-6d7f874d5d              0         0         0       13h
+replicaset.apps/shippingservice-54fb69d77          0         0         0       11h
+replicaset.apps/shippingservice-688dc9968f         0         0         0       13h
+replicaset.apps/shippingservice-6c465dd9c9         1         1         1       10h
+
+NAME                                           REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          11h
+
+NAME                         STATUS     COMPLETIONS   DURATION   AGE
+job.batch/loadgenerator      Complete   1/1           5m5s       12h
+job.batch/loadtest-smoke     Complete   1/1           4m3s       10h
+job.batch/loadtest-stepped   Complete   1/1           15m        11h

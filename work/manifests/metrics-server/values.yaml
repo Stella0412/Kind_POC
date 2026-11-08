@@ -1,0 +1,6 @@
+# Fallback values for the metrics-server Helm chart.
+# The primary install path is install.sh (upstream manifest + JSON patch);
+# this file is kept for environments where the GitHub release URL is blocked.
+args:
+  - --kubelet-insecure-tls
+  - --kubelet-preferred-address-types=InternalIP

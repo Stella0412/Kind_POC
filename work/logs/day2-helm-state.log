@@ -1,0 +1,48 @@
+===== 2026-10-31 21:00:30 helm history =====
+REVISION	UPDATED                 	STATUS    	CHART                	APP VERSION	DESCRIPTION     
+1       	Sat Oct 31 20:35:00 2026	superseded	online-boutique-0.1.0	0.3.4      	Install complete
+2       	Sat Oct 31 20:58:37 2026	superseded	online-boutique-0.1.0	0.3.4      	Upgrade complete
+3       	Sat Oct 31 20:59:27 2026	superseded	online-boutique-0.1.0	0.3.4      	Rollback to 1   
+4       	Sat Oct 31 20:59:41 2026	deployed  	online-boutique-0.1.0	0.3.4      	Upgrade complete
+
+===== values overrides =====
+USER-SUPPLIED VALUES:
+services:
+  frontend:
+    image:
+      repository: local/frontend
+      tag: day2
+
+===== pods =====
+NAME                                     READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+adservice-58c8d74f7b-f2v8q               1/1     Running   0          25m   10.244.1.20   qa-cluster-worker   <none>           <none>
+cartservice-6d9698b854-ftkrq             1/1     Running   0          25m   10.244.1.19   qa-cluster-worker   <none>           <none>
+checkoutservice-85988c9df-8q8wn          1/1     Running   0          25m   10.244.1.18   qa-cluster-worker   <none>           <none>
+currencyservice-df5c847bf-kjqtb          1/1     Running   0          25m   10.244.1.15   qa-cluster-worker   <none>           <none>
+emailservice-5947c5d46c-wgmkb            1/1     Running   0          25m   10.244.1.16   qa-cluster-worker   <none>           <none>
+frontend-db8d6fd7d-qxfr8                 1/1     Running   0          49s   10.244.1.28   qa-cluster-worker   <none>           <none>
+loadgenerator-zxrmk                      1/1     Running   0          11s   10.244.1.29   qa-cluster-worker   <none>           <none>
+paymentservice-687f89b58f-nnfwg          1/1     Running   0          25m   10.244.1.14   qa-cluster-worker   <none>           <none>
+productcatalogservice-58f5dfdf89-d68nc   1/1     Running   0          25m   10.244.1.22   qa-cluster-worker   <none>           <none>
+recommendationservice-7c767c85cc-l72xm   1/1     Running   0          25m   10.244.1.17   qa-cluster-worker   <none>           <none>
+redis-cart-6d7f874d5d-77l6m              1/1     Running   0          25m   10.244.1.23   qa-cluster-worker   <none>           <none>
+shippingservice-688dc9968f-lzzt6         1/1     Running   0          25m   10.244.1.21   qa-cluster-worker   <none>           <none>
+
+===== endpoints =====
+NAME                    ENDPOINTS           AGE
+adservice               10.244.1.20:9555    25m
+cartservice             10.244.1.19:7070    25m
+checkoutservice         10.244.1.18:5050    25m
+currencyservice         10.244.1.15:7000    25m
+emailservice            10.244.1.16:8080    25m
+frontend                10.244.1.28:8080    25m
+frontend-external       10.244.1.28:8080    25m
+paymentservice          10.244.1.14:50051   25m
+productcatalogservice   10.244.1.22:3550    25m
+recommendationservice   10.244.1.17:8080    25m
+redis-cart              10.244.1.23:6379    25m
+shippingservice         10.244.1.21:50051   25m
+
+===== images =====
+local/frontend:day2 52.8MB
+gcr.io/google-samples/microservices-demo/frontend:v0.3.1 55.9MB

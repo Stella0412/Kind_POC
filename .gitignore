@@ -1,0 +1,21 @@
+# 上游源码仓库不纳入本项目仓库
+repos/
+
+# 集群凭据绝不提交
+work/kubeconfig
+
+# 构建上下文与临时归档
+work/docker/frontend/context/
+work/docker/*.tar
+
+# 大文件视频先本地保存，必要时再用 Git LFS
+work/video/*.mp4
+
+# 运行日志：work/logs 全部留档（含子目录），其他位置的 *.log 仍忽略
+*.log
+!work/logs/*.log
+!work/logs/**/*.log
+work/logs/*.tar
+
+# superpowers 执行台账
+.superpowers/

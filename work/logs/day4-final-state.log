@@ -1,0 +1,30 @@
+=== 2026-10-31T23:54:36+08:00 ===
+NAME                                                   READY   STATUS    RESTARTS   AGE     IP            NODE                       NOMINATED NODE   READINESS GATES
+monitoring-grafana-55486b5b77-fljm7                    3/3     Running   0          9m      10.244.1.95   qa-cluster-worker          <none>           <none>
+monitoring-kube-prometheus-operator-55f6b6d747-crq6f   1/1     Running   0          28m     10.244.1.83   qa-cluster-worker          <none>           <none>
+monitoring-kube-state-metrics-5f78cc4856-x9hnr         1/1     Running   0          28m     10.244.1.84   qa-cluster-worker          <none>           <none>
+monitoring-prometheus-node-exporter-fgz8q              1/1     Running   0          28m     172.21.0.2    qa-cluster-worker          <none>           <none>
+monitoring-prometheus-node-exporter-v4ntf              1/1     Running   0          28m     172.21.0.3    qa-cluster-control-plane   <none>           <none>
+prometheus-monitoring-kube-prometheus-prometheus-0     2/2     Running   0          8m58s   10.244.1.96   qa-cluster-worker          <none>           <none>
+--- restarts ---
+monitoring-grafana-55486b5b77-fljm7	0 0 0 
+monitoring-kube-prometheus-operator-55f6b6d747-crq6f	0 
+monitoring-kube-state-metrics-5f78cc4856-x9hnr	0 
+monitoring-prometheus-node-exporter-fgz8q	0 
+monitoring-prometheus-node-exporter-v4ntf	0 
+prometheus-monitoring-kube-prometheus-prometheus-0	0 0 
+--- top pods ---
+NAME                                                   CPU(cores)   MEMORY(bytes)   
+monitoring-grafana-55486b5b77-fljm7                    16m          592Mi           
+prometheus-monitoring-kube-prometheus-prometheus-0     18m          262Mi           
+monitoring-kube-prometheus-operator-55f6b6d747-crq6f   4m           71Mi            
+monitoring-kube-state-metrics-5f78cc4856-x9hnr         2m           61Mi            
+monitoring-prometheus-node-exporter-v4ntf              2m           20Mi            
+monitoring-prometheus-node-exporter-fgz8q              1m           19Mi            
+--- top nodes ---
+NAME                       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+qa-cluster-control-plane   188m         0%       1576Mi          20%         
+qa-cluster-worker          759m         2%       3211Mi          41%         
+--- helm ---
+NAME      	NAMESPACE 	REVISION	UPDATED                              	STATUS  	CHART                        	APP VERSION
+monitoring	monitoring	4       	2026-10-31 23:45:28.7966541 +0800 CST	deployed	kube-prometheus-stack-92.16.1	v0.94.2    

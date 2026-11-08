@@ -1,0 +1,82 @@
+===== 开始预拉镜像 2026-10-31 15:41:00 =====
+
+>>> gcr.io/google-samples/microservices-demo/adservice:v0.3.4
+Digest: sha256:37b48b077af9130a6bd3b2fcb6d473e89eafc488262256f38fd663e890133af8
+Status: Downloaded newer image for gcr.io/google-samples/microservices-demo/adservice:v0.3.4
+gcr.io/google-samples/microservices-demo/adservice:v0.3.4
+OK   gcr.io/google-samples/microservices-demo/adservice:v0.3.4
+
+>>> gcr.io/google-samples/microservices-demo/cartservice:v0.3.1
+Digest: sha256:18dfefb4fdfc969bab57074f004e28133b02211bd5d44c7616de25b59736528f
+Status: Downloaded newer image for gcr.io/google-samples/microservices-demo/cartservice:v0.3.1
+gcr.io/google-samples/microservices-demo/cartservice:v0.3.1
+OK   gcr.io/google-samples/microservices-demo/cartservice:v0.3.1
+
+>>> gcr.io/google-samples/microservices-demo/checkoutservice:v0.3.1
+Digest: sha256:d1533bb68283b066e41eabe8e2bbce52e459a948460da062cbf1b0cb49b4e290
+Status: Downloaded newer image for gcr.io/google-samples/microservices-demo/checkoutservice:v0.3.1
+gcr.io/google-samples/microservices-demo/checkoutservice:v0.3.1
+OK   gcr.io/google-samples/microservices-demo/checkoutservice:v0.3.1
+
+>>> gcr.io/google-samples/microservices-demo/currencyservice:v0.3.1
+Digest: sha256:40351c3ee57d475adba8b170285d6eb2012b9f02f96ad5d1f8afce4cf58dddde
+Status: Downloaded newer image for gcr.io/google-samples/microservices-demo/currencyservice:v0.3.1
+gcr.io/google-samples/microservices-demo/currencyservice:v0.3.1
+OK   gcr.io/google-samples/microservices-demo/currencyservice:v0.3.1
+
+>>> gcr.io/google-samples/microservices-demo/emailservice:v0.3.1
+Digest: sha256:415e795e5da300e090b4567e2e7fb6e4152355cbfd7dbcf2c910465d9ca3349e
+Status: Downloaded newer image for gcr.io/google-samples/microservices-demo/emailservice:v0.3.1
+gcr.io/google-samples/microservices-demo/emailservice:v0.3.1
+OK   gcr.io/google-samples/microservices-demo/emailservice:v0.3.1
+
+>>> gcr.io/google-samples/microservices-demo/frontend:v0.3.1
+Digest: sha256:6229d9b299d067701c2f9d9fa3059019385160550e8fe416e6e33fa5482db25c
+Status: Image is up to date for gcr.io/google-samples/microservices-demo/frontend:v0.3.1
+gcr.io/google-samples/microservices-demo/frontend:v0.3.1
+OK   gcr.io/google-samples/microservices-demo/frontend:v0.3.1
+
+>>> gcr.io/google-samples/microservices-demo/loadgenerator:v0.3.1
+Digest: sha256:36ea438494786e2188e5abb1b4426473dec9feff4daff982962a7016500c93df
+Status: Downloaded newer image for gcr.io/google-samples/microservices-demo/loadgenerator:v0.3.1
+gcr.io/google-samples/microservices-demo/loadgenerator:v0.3.1
+OK   gcr.io/google-samples/microservices-demo/loadgenerator:v0.3.1
+
+>>> gcr.io/google-samples/microservices-demo/paymentservice:v0.3.1
+Digest: sha256:597da236784461cb3ede253700433d0ad814517fff8e317f3cea4339291a2345
+Status: Downloaded newer image for gcr.io/google-samples/microservices-demo/paymentservice:v0.3.1
+gcr.io/google-samples/microservices-demo/paymentservice:v0.3.1
+OK   gcr.io/google-samples/microservices-demo/paymentservice:v0.3.1
+
+>>> gcr.io/google-samples/microservices-demo/productcatalogservice:v0.3.1
+Digest: sha256:049d3c545e11b9fdb8a6076cc645f91cfa8af8e2115ac514522fed95582467fa
+Status: Downloaded newer image for gcr.io/google-samples/microservices-demo/productcatalogservice:v0.3.1
+gcr.io/google-samples/microservices-demo/productcatalogservice:v0.3.1
+OK   gcr.io/google-samples/microservices-demo/productcatalogservice:v0.3.1
+
+>>> gcr.io/google-samples/microservices-demo/recommendationservice:v0.3.1
+Digest: sha256:dc9f39d94e7d4484a35fbe985c8f076d880a7821c7c4b940df26a74923a9b47c
+Status: Downloaded newer image for gcr.io/google-samples/microservices-demo/recommendationservice:v0.3.1
+gcr.io/google-samples/microservices-demo/recommendationservice:v0.3.1
+OK   gcr.io/google-samples/microservices-demo/recommendationservice:v0.3.1
+
+>>> gcr.io/google-samples/microservices-demo/shippingservice:v0.3.1
+Digest: sha256:414b30819bdc18b035b437996f38e320e2818622d0260322285b6e831a99d0b6
+Status: Downloaded newer image for gcr.io/google-samples/microservices-demo/shippingservice:v0.3.1
+gcr.io/google-samples/microservices-demo/shippingservice:v0.3.1
+OK   gcr.io/google-samples/microservices-demo/shippingservice:v0.3.1
+
+>>> redis:7.4-alpine
+Digest: sha256:8da19c7399dca900c6822a1cf30f9d2285585e2c4b457ff4095b0f4500054d3f
+Status: Image is up to date for redis:7.4-alpine
+docker.io/library/redis:7.4-alpine
+OK   redis:7.4-alpine
+
+>>> busybox:1.36.1
+Digest: sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662
+Status: Downloaded newer image for busybox:1.36.1
+docker.io/library/busybox:1.36.1
+OK   busybox:1.36.1
+
+===== 结束 2026-10-31 15:43:29 =====
+全部成功

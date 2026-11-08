@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: loadtest-stepped
+  namespace: qa-helm
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: main
+          image: gcr.io/google-samples/microservices-demo/loadgenerator:v0.3.1
+          imagePullPolicy: IfNotPresent
+          command:
+            - /bin/sh
+            - -c
+            - |
+              set -e
+              for u in 20 50 100; do
+                echo "=== users=$u start $(date -Is) ==="
+                locust -f /locust/locustfile-fast.py \
+                  --host=http://frontend:80 \
+                  --headless -u "$u" -r 10 --run-time 3m \
+                  --only-summary --csv=/tmp/stats-$u \
+                  --exit-code-on-error 0
+                echo "=== users=$u end $(date -Is) ==="
+                sleep 120
+              done
+          resources:
+            requests: { cpu: 500m, memory: 256Mi }
+            limits: { cpu: "2", memory: 512Mi }
+          volumeMounts:
+            - name: locustfile
+              mountPath: /locust
+      volumes:
+        - name: locustfile
+          configMap:
+            name: locustfile-fast

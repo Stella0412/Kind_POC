@@ -1,0 +1,3 @@
+NAME                       STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION                      CONTAINER-RUNTIME
+qa-cluster-control-plane   Ready    control-plane   9h    v1.32.2   172.21.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+qa-cluster-worker          Ready    <none>          9h    v1.32.2   172.21.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3

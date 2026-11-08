@@ -1,0 +1,56 @@
+# 复测前后状态摘录（2026-10-31 UTC+8）
+# 复测：rev8-retest Pod，100 用户 / 90 秒，23:02:25 启动，23:04:13 结束
+
+===== 复测前（23:02，同一 frontend Pod frontend-6bc5cfbcd6-tj74z）=====
+$ kubectl exec frontend-6bc5cfbcd6-tj74z -n qa-helm -- cat /sys/fs/cgroup/cpu.stat
+usage_usec 179629518
+user_usec 115644183
+system_usec 63985335
+nice_usec 0
+nr_periods 9949
+nr_throttled 8889
+throttled_usec 2802156511
+nr_bursts 0
+burst_usec 0
+
+adservice=adservice-75968447cd-8ngn7
+adservice restartCount=0
+
+===== 复测后（23:05，同一 frontend Pod frontend-6bc5cfbcd6-tj74z）=====
+$ kubectl exec frontend-6bc5cfbcd6-tj74z -n qa-helm -- cat /sys/fs/cgroup/cpu.stat
+usage_usec 197505945
+user_usec 128303682
+system_usec 69202263
+nice_usec 0
+nr_periods 10862
+nr_throttled 9775
+throttled_usec 3107823839
+nr_bursts 0
+burst_usec 0
+
+增量：nr_periods +913，nr_throttled +886，限流比例 886/913 = 97.0%。
+
+===== 复测后 adservice 状态 =====
+$ kubectl get pod adservice-75968447cd-8ngn7 -n qa-helm \
+    -o jsonpath='{.status.containerStatuses[0].lastState}'
+{"terminated":{"containerID":"containerd://1d80b70132f64c42a9b68562820a88d9151340029d832a2d8bc2ddfdd8910e91",
+ "exitCode":137,"finishedAt":"2026-10-31T15:03:36Z","reason":"OOMKilled",
+ "startedAt":"2026-10-31T14:43:49Z"}}
+restartCount=1
+（即 23:03:36 OOMKilled，exit 137；23:03:37 重启）
+
+$ kubectl describe pod adservice-75968447cd-8ngn7 -n qa-helm | grep -E 'Last State|Reason|Exit Code|Started|Finished|Restart Count'
+    Last State:     Terminated
+      Reason:       OOMKilled
+      Exit Code:    137
+      Started:      Sat, 31 Oct 2026 23:03:37 +0800
+      Finished:     Sat, 31 Oct 2026 23:03:36 +0800
+    Restart Count:  1
+
+===== 复测后 top / HPA（23:05）=====
+adservice-75968447cd-8ngn7    server   161Mi   （重启后空闲）
+frontend-6bc5cfbcd6-gvqnx     server   9Mi     （HPA 新 Pod）
+frontend-6bc5cfbcd6-r5rhp     server   8Mi
+frontend-6bc5cfbcd6-tj74z     server   27Mi
+frontend-6bc5cfbcd6-wcnb5     server   8Mi
+frontend   Deployment/frontend   cpu: 1%/50%   1   4   4

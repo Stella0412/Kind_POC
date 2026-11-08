@@ -1,0 +1,72 @@
+[reproduce] start 2026-11-01T09:36:51+08:00
+[reproduce] cluster 'qa-cluster' already exists; reusing it
+node/qa-cluster-control-plane condition met
+node/qa-cluster-worker condition met
+[reproduce] cluster ready: 2s (total 2s)
+[reproduce] images loaded: 69s (total 71s)
+serviceaccount/metrics-server unchanged
+clusterrole.rbac.authorization.k8s.io/system:aggregated-metrics-reader unchanged
+clusterrole.rbac.authorization.k8s.io/system:metrics-server unchanged
+rolebinding.rbac.authorization.k8s.io/metrics-server-auth-reader unchanged
+clusterrolebinding.rbac.authorization.k8s.io/metrics-server:system:auth-delegator unchanged
+clusterrolebinding.rbac.authorization.k8s.io/system:metrics-server unchanged
+service/metrics-server unchanged
+deployment.apps/metrics-server configured
+apiservice.apiregistration.k8s.io/v1beta1.metrics.k8s.io unchanged
+deployment.apps/metrics-server patched
+deployment "metrics-server" successfully rolled out
+NAME                       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+qa-cluster-control-plane   1336m        4%       900Mi           11%         
+qa-cluster-worker          1614m        5%       2411Mi          30%         
+[reproduce] metrics-server ready: 15s (total 86s)
+Release "online-boutique" has been upgraded. Happy Helming!
+NAME: online-boutique
+LAST DEPLOYED: Sun Nov  1 09:38:19 2026
+NAMESPACE: qa-helm
+STATUS: deployed
+REVISION: 9
+DESCRIPTION: Upgrade complete
+TEST SUITE: None
+NOTES:
+Online Boutique 已部署到命名空间 qa-helm。
+
+查看状态：
+  kubectl get pods -n qa-helm
+  kubectl get endpoints -n qa-helm
+
+访问前端：
+  kubectl port-forward -n qa-helm svc/frontend 8080:80
+  浏览器打开 http://localhost:8080
+
+当前 frontend 镜像：
+  local/frontend:day2
+deployment "frontend" successfully rolled out
+[reproduce] app deployed: 3s (total 89s)
+NAME                       STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION                      CONTAINER-RUNTIME
+qa-cluster-control-plane   Ready    control-plane   17h   v1.32.2   172.21.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+qa-cluster-worker          Ready    <none>          17h   v1.32.2   172.21.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+NAME                                     READY   STATUS      RESTARTS        AGE
+adservice-75968447cd-8ngn7               1/1     Running     3 (2m33s ago)   10h
+cartservice-77cb898dd4-vnktn             1/1     Running     1 (2m33s ago)   11h
+checkoutservice-674999b5c7-rt277         1/1     Running     1 (2m33s ago)   10h
+currencyservice-86f586d9c7-l682q         1/1     Running     1 (2m33s ago)   10h
+emailservice-7c575df669-v6j6d            1/1     Running     1 (2m33s ago)   10h
+frontend-6bc5cfbcd6-tj74z                1/1     Running     1 (2m33s ago)   11h
+loadgenerator-hfwrr                      0/1     Completed   0               12h
+loadtest-smoke-p2bp6                     0/1     Completed   0               10h
+loadtest-stepped-j9plp                   0/1     Completed   0               11h
+paymentservice-68dcddb59-fmlpq           1/1     Running     1 (2m33s ago)   10h
+productcatalogservice-84469965d9-7rtsk   1/1     Running     1 (2m33s ago)   10h
+recommendationservice-5d9cb49bbd-ljz99   1/1     Running     1 (2m33s ago)   10h
+redis-cart-5bc545b94-9cbll               1/1     Running     1 (2m33s ago)   11h
+shippingservice-6c465dd9c9-twvcf         1/1     Running     1 (2m33s ago)   10h
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          11h
+NAME           	NAMESPACE	REVISION	UPDATED                              	STATUS  	CHART                	APP VERSION
+online-boutique	qa-helm  	9       	2026-11-01 09:38:19.0495506 +0800 CST	deployed	online-boutique-0.1.0	0.3.4      
+VERIFY OK: all services have endpoints
+[reproduce] verify: 5s (total 94s)
+SMOKE OK: homepage / product / cart / checkout
+[reproduce] smoke: 3s (total 97s)
+REPRODUCE_SECONDS=97
+REPRODUCE OK

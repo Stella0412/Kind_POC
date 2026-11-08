@@ -1,0 +1,32 @@
+bash work/scripts/verify.sh
+NAME                       STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION                      CONTAINER-RUNTIME
+qa-cluster-control-plane   Ready    control-plane   9h    v1.32.2   172.21.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+qa-cluster-worker          Ready    <none>          9h    v1.32.2   172.21.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+NAME                                     READY   STATUS    RESTARTS        AGE
+adservice-75968447cd-mpjlx               1/1     Running   2 (4m41s ago)   9h
+cartservice-77cb898dd4-sfdph             1/1     Running   0               9h
+checkoutservice-674999b5c7-d7glm         1/1     Running   0               9h
+currencyservice-86f586d9c7-cxcdt         1/1     Running   0               9h
+emailservice-7c575df669-xck6r            1/1     Running   0               9h
+frontend-769c57d47d-w2wt2                1/1     Running   0               9h
+paymentservice-68dcddb59-xjzld           1/1     Running   0               9h
+productcatalogservice-84469965d9-5z8sd   1/1     Running   0               9h
+recommendationservice-5d9cb49bbd-tflmc   1/1     Running   0               9h
+redis-cart-5bc545b94-76j9s               1/1     Running   0               9h
+shippingservice-6c465dd9c9-mnghn         1/1     Running   0               9h
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          9h
+NAME           	NAMESPACE	REVISION	UPDATED                              	STATUS  	CHART                	APP VERSION
+online-boutique	qa-helm  	1       	2026-11-01 10:01:02.8270414 +0800 CST	deployed	online-boutique-0.1.0	0.3.4      
+deployment "adservice" successfully rolled out
+deployment "cartservice" successfully rolled out
+deployment "checkoutservice" successfully rolled out
+deployment "currencyservice" successfully rolled out
+deployment "emailservice" successfully rolled out
+deployment "frontend" successfully rolled out
+deployment "paymentservice" successfully rolled out
+deployment "productcatalogservice" successfully rolled out
+deployment "recommendationservice" successfully rolled out
+deployment "redis-cart" successfully rolled out
+deployment "shippingservice" successfully rolled out
+VERIFY OK: nodes Ready, 11 pods Running/Ready, HPA frontend, all services have endpoints

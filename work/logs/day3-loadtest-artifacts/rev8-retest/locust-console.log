@@ -1,0 +1,44 @@
+[2026-10-31 15:02:44,012] rev8-retest/INFO/locust.main: Run time limit set to 90 seconds
+[2026-10-31 15:02:44,013] rev8-retest/INFO/locust.main: Starting Locust 1.3.1
+[2026-10-31 15:02:44,013] rev8-retest/INFO/locust.runners: Spawning 100 users at the rate 10 users/s (0 users already running)...
+[2026-10-31 15:02:54,012] rev8-retest/INFO/locust.runners: All users spawned: WebsiteUser: 100 (0 already running)
+[2026-10-31 15:04:13,653] rev8-retest/INFO/locust.main: Time limit reached. Stopping Locust.
+[2026-10-31 15:04:13,654] rev8-retest/INFO/locust.runners: Stopping 100 users
+[2026-10-31 15:04:13,666] rev8-retest/INFO/locust.runners: 100 Users have been stopped
+[2026-10-31 15:04:13,667] rev8-retest/INFO/locust.main: Running teardowns...
+[2026-10-31 15:04:13,667] rev8-retest/INFO/locust.main: Shutting down (exit code 0), bye.
+[2026-10-31 15:04:13,667] rev8-retest/INFO/locust.main: Cleaning up runner...
+ Name                                                          # reqs      # fails  |     Avg     Min     Max  Median  |   req/s failures/s
+--------------------------------------------------------------------------------------------------------------------------------------------
+ GET /                                                           1068     0(0.00%)  |    2125      20    3829    2100  |   11.91    0.00
+ POST /cart                                                       615     0(0.00%)  |    2826     457    5191    2800  |    6.86    0.00
+ GET /product/0PUK6V6EV0                                          248     0(0.00%)  |    1728     129    2889    1700  |    2.77    0.00
+ GET /product/1YMWWN1N4O                                          253     0(0.00%)  |    1752     316    3236    1700  |    2.82    0.00
+ GET /product/2ZYFJ3GM2N                                          238     0(0.00%)  |    1768     535    3089    1800  |    2.66    0.00
+ GET /product/66VCHSJNUP                                          228     0(0.00%)  |    1741     470    3513    1700  |    2.54    0.00
+ GET /product/6E92ZMYYFZ                                          242     0(0.00%)  |    1742     337    2977    1700  |    2.70    0.00
+ GET /product/9SIQT8TOJO                                          236     0(0.00%)  |    1718      45    3004    1700  |    2.63    0.00
+ GET /product/L9ECAV7KIM                                          227     0(0.00%)  |    1684     337    3252    1700  |    2.53    0.00
+ GET /product/LS4PSXUNUM                                          244     0(0.00%)  |    1723     457    3341    1600  |    2.72    0.00
+ GET /product/OLJCESPC7Z                                          241     0(0.00%)  |    1750      30    3053    1700  |    2.69    0.00
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregated                                                      3840     0(0.00%)  |    2018      20    5191    1900  |   42.84    0.00
+
+Response time percentiles (approximated)
+ Type     Name                                                              50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ GET      /                                                                2100   2400   2500   2500   2800   3000   3200   3500   3700   3800   3800   1068
+ POST     /cart                                                            2800   3100   3300   3400   3700   3900   4200   4300   5200   5200   5200    615
+ GET      /product/0PUK6V6EV0                                              1700   1900   2000   2100   2400   2500   2800   2900   2900   2900   2900    248
+ GET      /product/1YMWWN1N4O                                              1700   1900   2000   2100   2400   2500   2700   2800   3200   3200   3200    253
+ GET      /product/2ZYFJ3GM2N                                              1800   1900   2000   2100   2400   2500   2800   2800   3100   3100   3100    238
+ GET      /product/66VCHSJNUP                                              1700   1900   2000   2100   2300   2500   2800   3000   3500   3500   3500    228
+ GET      /product/6E92ZMYYFZ                                              1700   1900   1900   2000   2300   2500   2700   2800   3000   3000   3000    242
+ GET      /product/9SIQT8TOJO                                              1700   1800   2000   2100   2300   2400   2700   2700   3000   3000   3000    236
+ GET      /product/L9ECAV7KIM                                              1700   1800   2000   2000   2300   2400   2700   3000   3300   3300   3300    227
+ GET      /product/LS4PSXUNUM                                              1600   1900   2000   2100   2300   2500   2900   3000   3300   3300   3300    244
+ GET      /product/OLJCESPC7Z                                              1700   1900   2000   2100   2300   2600   2900   2900   3100   3100   3100    241
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ None     Aggregated                                                       1900   2200   2400   2500   2900   3200   3600   3900   4700   5200   5200   3840
+
+=== locust done 2026-10-31T15:04:13+00:00 ===

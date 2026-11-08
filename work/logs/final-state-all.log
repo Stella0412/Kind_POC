@@ -1,0 +1,261 @@
+# 全量运行状态快照
+captured_at: 2026-10-31T16:04:46Z / local 2026-11-01 00:04:46    
+
+## helm list -A
+NAME           	NAMESPACE 	REVISION	UPDATED                              	STATUS  	CHART                        	APP VERSION
+monitoring     	monitoring	4       	2026-10-31 23:45:28.7966541 +0800 CST	deployed	kube-prometheus-stack-92.16.1	v0.94.2    
+online-boutique	qa-helm   	8       	2026-10-31 22:43:47.8074031 +0800 CST	deployed	online-boutique-0.1.0        	0.3.4      
+
+## nodes
+NAME                       STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION                      CONTAINER-RUNTIME
+qa-cluster-control-plane   Ready    control-plane   8h    v1.32.2   172.21.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+qa-cluster-worker          Ready    <none>          8h    v1.32.2   172.21.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+
+## pods -A
+NAMESPACE            NAME                                                   READY   STATUS      RESTARTS       AGE     IP            NODE                       NOMINATED NODE   READINESS GATES
+kube-system          coredns-668d6bf9bc-mmndc                               1/1     Running     2 (143m ago)   8h      10.244.0.3    qa-cluster-control-plane   <none>           <none>
+kube-system          coredns-668d6bf9bc-zfm88                               1/1     Running     2 (143m ago)   8h      10.244.0.2    qa-cluster-control-plane   <none>           <none>
+kube-system          etcd-qa-cluster-control-plane                          1/1     Running     0              143m    172.21.0.3    qa-cluster-control-plane   <none>           <none>
+kube-system          kindnet-8tfj7                                          1/1     Running     2 (143m ago)   8h      172.21.0.2    qa-cluster-worker          <none>           <none>
+kube-system          kindnet-mnrzt                                          1/1     Running     2 (143m ago)   8h      172.21.0.3    qa-cluster-control-plane   <none>           <none>
+kube-system          kube-apiserver-qa-cluster-control-plane                1/1     Running     0              143m    172.21.0.3    qa-cluster-control-plane   <none>           <none>
+kube-system          kube-controller-manager-qa-cluster-control-plane       1/1     Running     2 (143m ago)   8h      172.21.0.3    qa-cluster-control-plane   <none>           <none>
+kube-system          kube-proxy-mppzb                                       1/1     Running     2 (143m ago)   8h      172.21.0.3    qa-cluster-control-plane   <none>           <none>
+kube-system          kube-proxy-rfwtf                                       1/1     Running     2 (143m ago)   8h      172.21.0.2    qa-cluster-worker          <none>           <none>
+kube-system          kube-scheduler-qa-cluster-control-plane                1/1     Running     2 (143m ago)   8h      172.21.0.3    qa-cluster-control-plane   <none>           <none>
+kube-system          metrics-server-6f9bf66-tqmgj                           1/1     Running     0              126m    10.244.1.36   qa-cluster-worker          <none>           <none>
+local-path-storage   local-path-provisioner-7dc846544d-hr7d9                1/1     Running     4 (143m ago)   8h      10.244.0.4    qa-cluster-control-plane   <none>           <none>
+monitoring           monitoring-grafana-55486b5b77-fljm7                    3/3     Running     0              19m     10.244.1.95   qa-cluster-worker          <none>           <none>
+monitoring           monitoring-kube-prometheus-operator-55f6b6d747-crq6f   1/1     Running     0              38m     10.244.1.83   qa-cluster-worker          <none>           <none>
+monitoring           monitoring-kube-state-metrics-5f78cc4856-x9hnr         1/1     Running     0              38m     10.244.1.84   qa-cluster-worker          <none>           <none>
+monitoring           monitoring-prometheus-node-exporter-fgz8q              1/1     Running     0              38m     172.21.0.2    qa-cluster-worker          <none>           <none>
+monitoring           monitoring-prometheus-node-exporter-v4ntf              1/1     Running     0              38m     172.21.0.3    qa-cluster-control-plane   <none>           <none>
+monitoring           prometheus-monitoring-kube-prometheus-prometheus-0     2/2     Running     0              19m     10.244.1.96   qa-cluster-worker          <none>           <none>
+qa-helm              adservice-75968447cd-8ngn7                             1/1     Running     2 (10m ago)    80m     10.244.1.57   qa-cluster-worker          <none>           <none>
+qa-helm              cartservice-77cb898dd4-vnktn                           1/1     Running     0              127m    10.244.1.25   qa-cluster-worker          <none>           <none>
+qa-helm              checkoutservice-674999b5c7-rt277                       1/1     Running     0              80m     10.244.1.58   qa-cluster-worker          <none>           <none>
+qa-helm              currencyservice-86f586d9c7-l682q                       1/1     Running     0              80m     10.244.1.59   qa-cluster-worker          <none>           <none>
+qa-helm              emailservice-7c575df669-v6j6d                          1/1     Running     0              80m     10.244.1.60   qa-cluster-worker          <none>           <none>
+qa-helm              frontend-6bc5cfbcd6-tj74z                              1/1     Running     0              122m    10.244.1.40   qa-cluster-worker          <none>           <none>
+qa-helm              loadgenerator-hfwrr                                    0/1     Completed   0              174m    <none>        qa-cluster-worker          <none>           <none>
+qa-helm              loadtest-smoke-p2bp6                                   0/1     Completed   0              33m     10.244.1.89   qa-cluster-worker          <none>           <none>
+qa-helm              loadtest-stepped-j9plp                                 0/1     Completed   0              108m    10.244.1.45   qa-cluster-worker          <none>           <none>
+qa-helm              paymentservice-68dcddb59-fmlpq                         1/1     Running     0              80m     10.244.1.61   qa-cluster-worker          <none>           <none>
+qa-helm              productcatalogservice-84469965d9-7rtsk                 1/1     Running     0              80m     10.244.1.62   qa-cluster-worker          <none>           <none>
+qa-helm              recommendationservice-5d9cb49bbd-ljz99                 1/1     Running     0              80m     10.244.1.63   qa-cluster-worker          <none>           <none>
+qa-helm              redis-cart-5bc545b94-9cbll                             1/1     Running     0              127m    10.244.1.33   qa-cluster-worker          <none>           <none>
+qa-helm              shippingservice-6c465dd9c9-twvcf                       1/1     Running     0              80m     10.244.1.64   qa-cluster-worker          <none>           <none>
+qa                   adservice-f859d9cb-zwvwg                               1/1     Running     1 (143m ago)   3h44m   10.244.1.5    qa-cluster-worker          <none>           <none>
+qa                   cartservice-577d6bdc74-pfpvp                           1/1     Running     2 (143m ago)   3h44m   10.244.1.8    qa-cluster-worker          <none>           <none>
+qa                   checkoutservice-76587d6cb9-6hgnf                       1/1     Running     1 (143m ago)   3h44m   10.244.1.6    qa-cluster-worker          <none>           <none>
+qa                   currencyservice-dc767c899-56kp8                        1/1     Running     1 (143m ago)   3h44m   10.244.1.2    qa-cluster-worker          <none>           <none>
+qa                   emailservice-7fffb69467-jhnjl                          1/1     Running     1 (143m ago)   3h44m   10.244.1.4    qa-cluster-worker          <none>           <none>
+qa                   frontend-8b95d687-rr8bs                                1/1     Running     1 (143m ago)   3h42m   10.244.1.11   qa-cluster-worker          <none>           <none>
+qa                   paymentservice-58dfdcd8d5-zzq5f                        1/1     Running     1 (143m ago)   3h44m   10.244.1.3    qa-cluster-worker          <none>           <none>
+qa                   productcatalogservice-78ddcfc979-4gjjj                 1/1     Running     1 (143m ago)   3h44m   10.244.1.7    qa-cluster-worker          <none>           <none>
+qa                   recommendationservice-67b46ccd97-m6lhs                 1/1     Running     1 (143m ago)   3h42m   10.244.1.13   qa-cluster-worker          <none>           <none>
+qa                   redis-cart-6bd6b8ff77-wdk95                            1/1     Running     1 (143m ago)   3h44m   10.244.1.9    qa-cluster-worker          <none>           <none>
+qa                   shippingservice-5bccf967cc-wxwlb                       1/1     Running     1 (143m ago)   3h44m   10.244.1.12   qa-cluster-worker          <none>           <none>
+
+## deployments -A
+NAMESPACE            NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
+kube-system          coredns                               2/2     2            2           8h
+kube-system          metrics-server                        1/1     1            1           126m
+local-path-storage   local-path-provisioner                1/1     1            1           8h
+monitoring           monitoring-grafana                    1/1     1            1           49m
+monitoring           monitoring-kube-prometheus-operator   1/1     1            1           49m
+monitoring           monitoring-kube-state-metrics         1/1     1            1           49m
+qa-helm              adservice                             1/1     1            1           3h29m
+qa-helm              cartservice                           1/1     1            1           3h29m
+qa-helm              checkoutservice                       1/1     1            1           3h29m
+qa-helm              currencyservice                       1/1     1            1           3h29m
+qa-helm              emailservice                          1/1     1            1           3h29m
+qa-helm              frontend                              1/1     1            1           3h29m
+qa-helm              paymentservice                        1/1     1            1           3h29m
+qa-helm              productcatalogservice                 1/1     1            1           3h29m
+qa-helm              recommendationservice                 1/1     1            1           3h29m
+qa-helm              redis-cart                            1/1     1            1           3h29m
+qa-helm              shippingservice                       1/1     1            1           3h29m
+qa                   adservice                             1/1     1            1           3h44m
+qa                   cartservice                           1/1     1            1           3h44m
+qa                   checkoutservice                       1/1     1            1           3h44m
+qa                   currencyservice                       1/1     1            1           3h44m
+qa                   emailservice                          1/1     1            1           3h44m
+qa                   frontend                              1/1     1            1           3h44m
+qa                   paymentservice                        1/1     1            1           3h44m
+qa                   productcatalogservice                 1/1     1            1           3h44m
+qa                   recommendationservice                 1/1     1            1           3h44m
+qa                   redis-cart                            1/1     1            1           3h44m
+qa                   shippingservice                       1/1     1            1           3h44m
+
+## statefulsets -A
+NAMESPACE    NAME                                               READY   AGE
+monitoring   prometheus-monitoring-kube-prometheus-prometheus   1/1     38m
+
+## daemonsets -A
+NAMESPACE     NAME                                  DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+kube-system   kindnet                               2         2         2       2            2           kubernetes.io/os=linux   8h
+kube-system   kube-proxy                            2         2         2       2            2           kubernetes.io/os=linux   8h
+monitoring    monitoring-prometheus-node-exporter   2         2         2       2            2           kubernetes.io/os=linux   49m
+
+## hpa -A
+NAMESPACE   NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+qa-helm     frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          125m
+
+## svc -A
+NAMESPACE     NAME                                    TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                        AGE
+default       kubernetes                              ClusterIP      10.96.0.1       <none>        443/TCP                        8h
+kube-system   kube-dns                                ClusterIP      10.96.0.10      <none>        53/UDP,53/TCP,9153/TCP         8h
+kube-system   metrics-server                          ClusterIP      10.96.128.3     <none>        443/TCP                        126m
+kube-system   monitoring-kube-prometheus-coredns      ClusterIP      None            <none>        9153/TCP                       49m
+kube-system   monitoring-kube-prometheus-kubelet      ClusterIP      None            <none>        10250/TCP,4194/TCP,10255/TCP   38m
+monitoring    monitoring-grafana                      ClusterIP      10.96.180.81    <none>        80/TCP                         49m
+monitoring    monitoring-kube-prometheus-operator     ClusterIP      10.96.12.185    <none>        443/TCP                        49m
+monitoring    monitoring-kube-prometheus-prometheus   ClusterIP      10.96.146.167   <none>        9090/TCP,8080/TCP              49m
+monitoring    monitoring-kube-state-metrics           ClusterIP      10.96.96.11     <none>        8080/TCP                       49m
+monitoring    monitoring-prometheus-node-exporter     ClusterIP      10.96.255.46    <none>        9100/TCP                       49m
+monitoring    prometheus-operated                     ClusterIP      None            <none>        9090/TCP                       38m
+qa-helm       adservice                               ClusterIP      10.96.189.6     <none>        9555/TCP                       3h29m
+qa-helm       cartservice                             ClusterIP      10.96.30.151    <none>        7070/TCP                       3h29m
+qa-helm       checkoutservice                         ClusterIP      10.96.118.165   <none>        5050/TCP                       3h29m
+qa-helm       currencyservice                         ClusterIP      10.96.246.70    <none>        7000/TCP                       3h29m
+qa-helm       emailservice                            ClusterIP      10.96.55.188    <none>        5000/TCP                       3h29m
+qa-helm       frontend                                ClusterIP      10.96.244.201   <none>        80/TCP                         3h29m
+qa-helm       frontend-external                       LoadBalancer   10.96.39.248    <pending>     80:30698/TCP                   3h29m
+qa-helm       paymentservice                          ClusterIP      10.96.186.150   <none>        50051/TCP                      3h29m
+qa-helm       productcatalogservice                   ClusterIP      10.96.118.104   <none>        3550/TCP                       3h29m
+qa-helm       recommendationservice                   ClusterIP      10.96.247.116   <none>        8080/TCP                       3h29m
+qa-helm       redis-cart                              ClusterIP      10.96.214.72    <none>        6379/TCP                       3h29m
+qa-helm       shippingservice                         ClusterIP      10.96.46.73     <none>        50051/TCP                      3h29m
+qa            adservice                               ClusterIP      10.96.239.203   <none>        9555/TCP                       3h44m
+qa            cartservice                             ClusterIP      10.96.184.14    <none>        7070/TCP                       3h44m
+qa            checkoutservice                         ClusterIP      10.96.158.84    <none>        5050/TCP                       3h44m
+qa            currencyservice                         ClusterIP      10.96.91.20     <none>        7000/TCP                       3h44m
+qa            emailservice                            ClusterIP      10.96.163.17    <none>        5000/TCP                       3h44m
+qa            frontend                                ClusterIP      10.96.140.79    <none>        80/TCP                         3h44m
+qa            frontend-external                       NodePort       10.96.125.253   <none>        80:31744/TCP                   3h44m
+qa            paymentservice                          ClusterIP      10.96.226.123   <none>        50051/TCP                      3h44m
+qa            productcatalogservice                   ClusterIP      10.96.224.105   <none>        3550/TCP                       3h44m
+qa            recommendationservice                   ClusterIP      10.96.8.243     <none>        8080/TCP                       3h44m
+qa            redis-cart                              ClusterIP      10.96.19.62     <none>        6379/TCP                       3h44m
+qa            shippingservice                         ClusterIP      10.96.225.126   <none>        50051/TCP                      3h44m
+
+## pvc -A
+No resources found
+
+## top nodes
+NAME                       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+qa-cluster-control-plane   154m         0%       1535Mi          19%         
+qa-cluster-worker          497m         1%       3232Mi          41%         
+
+## top pods -A
+NAMESPACE            NAME                                                   CPU(cores)   MEMORY(bytes)   
+kube-system          coredns-668d6bf9bc-mmndc                               4m           46Mi            
+kube-system          coredns-668d6bf9bc-zfm88                               3m           30Mi            
+kube-system          etcd-qa-cluster-control-plane                          28m          148Mi           
+kube-system          kindnet-8tfj7                                          4m           33Mi            
+kube-system          kindnet-mnrzt                                          2m           30Mi            
+kube-system          kube-apiserver-qa-cluster-control-plane                52m          621Mi           
+kube-system          kube-controller-manager-qa-cluster-control-plane       22m          99Mi            
+kube-system          kube-proxy-mppzb                                       1m           49Mi            
+kube-system          kube-proxy-rfwtf                                       1m           55Mi            
+kube-system          kube-scheduler-qa-cluster-control-plane                9m           62Mi            
+kube-system          metrics-server-6f9bf66-tqmgj                           4m           43Mi            
+local-path-storage   local-path-provisioner-7dc846544d-hr7d9                1m           24Mi            
+monitoring           monitoring-grafana-55486b5b77-fljm7                    16m          595Mi           
+monitoring           monitoring-kube-prometheus-operator-55f6b6d747-crq6f   6m           71Mi            
+monitoring           monitoring-kube-state-metrics-5f78cc4856-x9hnr         2m           59Mi            
+monitoring           monitoring-prometheus-node-exporter-fgz8q              1m           18Mi            
+monitoring           monitoring-prometheus-node-exporter-v4ntf              1m           21Mi            
+monitoring           prometheus-monitoring-kube-prometheus-prometheus-0     23m          280Mi           
+qa                   adservice-f859d9cb-zwvwg                               27m          262Mi           
+qa                   cartservice-577d6bdc74-pfpvp                           5m           34Mi            
+qa                   checkoutservice-76587d6cb9-6hgnf                       3m           9Mi             
+qa                   currencyservice-dc767c899-56kp8                        4m           25Mi            
+qa                   emailservice-7fffb69467-jhnjl                          8m           40Mi            
+qa                   frontend-8b95d687-rr8bs                                1m           12Mi            
+qa                   paymentservice-58dfdcd8d5-zzq5f                        4m           22Mi            
+qa                   productcatalogservice-78ddcfc979-4gjjj                 4m           9Mi             
+qa                   recommendationservice-67b46ccd97-m6lhs                 6m           35Mi            
+qa                   redis-cart-6bd6b8ff77-wdk95                            7m           5Mi             
+qa                   shippingservice-5bccf967cc-wxwlb                       6m           11Mi            
+qa-helm              adservice-75968447cd-8ngn7                             30m          195Mi           
+qa-helm              cartservice-77cb898dd4-vnktn                           5m           42Mi            
+qa-helm              checkoutservice-674999b5c7-rt277                       5m           7Mi             
+qa-helm              currencyservice-86f586d9c7-l682q                       4m           40Mi            
+qa-helm              emailservice-7c575df669-v6j6d                          7m           39Mi            
+qa-helm              frontend-6bc5cfbcd6-tj74z                              1m           21Mi            
+qa-helm              paymentservice-68dcddb59-fmlpq                         5m           23Mi            
+qa-helm              productcatalogservice-84469965d9-7rtsk                 5m           10Mi            
+qa-helm              recommendationservice-5d9cb49bbd-ljz99                 5m           44Mi            
+qa-helm              redis-cart-5bc545b94-9cbll                             7m           7Mi             
+qa-helm              shippingservice-6c465dd9c9-twvcf                       5m           8Mi             
+
+## prometheusrule
+NAMESPACE    NAME                                                              AGE
+monitoring   monitoring-kube-prometheus-alertmanager.rules                     49m
+monitoring   monitoring-kube-prometheus-config-reloaders                       49m
+monitoring   monitoring-kube-prometheus-general.rules                          49m
+monitoring   monitoring-kube-prometheus-k8s.rules.container-cpu-usage-second   49m
+monitoring   monitoring-kube-prometheus-k8s.rules.container-memory-cache       49m
+monitoring   monitoring-kube-prometheus-k8s.rules.container-memory-rss         49m
+monitoring   monitoring-kube-prometheus-k8s.rules.container-memory-swap        49m
+monitoring   monitoring-kube-prometheus-k8s.rules.container-memory-working-s   49m
+monitoring   monitoring-kube-prometheus-k8s.rules.container-resource           49m
+monitoring   monitoring-kube-prometheus-k8s.rules.pod-owner                    49m
+monitoring   monitoring-kube-prometheus-kube-apiserver-availability.rules      49m
+monitoring   monitoring-kube-prometheus-kube-apiserver-burnrate.rules          49m
+monitoring   monitoring-kube-prometheus-kube-apiserver-histogram.rules         49m
+monitoring   monitoring-kube-prometheus-kube-apiserver-slos                    49m
+monitoring   monitoring-kube-prometheus-kube-prometheus-general.rules          49m
+monitoring   monitoring-kube-prometheus-kube-prometheus-node-recording.rules   49m
+monitoring   monitoring-kube-prometheus-kube-state-metrics                     49m
+monitoring   monitoring-kube-prometheus-kubelet.rules                          49m
+monitoring   monitoring-kube-prometheus-kubernetes-apps                        49m
+monitoring   monitoring-kube-prometheus-kubernetes-resources                   49m
+monitoring   monitoring-kube-prometheus-kubernetes-storage                     49m
+monitoring   monitoring-kube-prometheus-kubernetes-system                      49m
+monitoring   monitoring-kube-prometheus-kubernetes-system-apiserver            49m
+monitoring   monitoring-kube-prometheus-kubernetes-system-kubelet              49m
+monitoring   monitoring-kube-prometheus-node-exporter                          49m
+monitoring   monitoring-kube-prometheus-node-exporter.rules                    49m
+monitoring   monitoring-kube-prometheus-node-network                           49m
+monitoring   monitoring-kube-prometheus-node.rules                             49m
+monitoring   monitoring-kube-prometheus-prometheus                             49m
+monitoring   monitoring-kube-prometheus-prometheus-operator                    49m
+monitoring   online-boutique-alerts                                            28m
+
+## monitoring pods restart counts
+monitoring-grafana-55486b5b77-fljm7	0 0 0
+monitoring-kube-prometheus-operator-55f6b6d747-crq6f	0
+monitoring-kube-state-metrics-5f78cc4856-x9hnr	0
+monitoring-prometheus-node-exporter-fgz8q	0
+monitoring-prometheus-node-exporter-v4ntf	0
+prometheus-monitoring-kube-prometheus-prometheus-0	0 0
+## prometheus buildinfo
+{"status":"success","data":{"version":"3.15.1","revision":"bae3eced0a5369e050e83ea73bc381d7c4b1a719","branch":"HEAD","buildUser":"root@03bc6b0f3ef7","buildDate":"20261021-13:31:17","goVersion":"go1.27.3"}}
+## prometheus rules summary (raw JSON: work/logs/prometheus-rules-all-2026-11-01.json)
+groups: 16  rules: 137
+states: {'inactive': 132, 'firing': 4, 'pending': 1}
+
+custom group online-boutique.rules:
+  file: /etc/prometheus/rules/prometheus-monitoring-kube-prometheus-prometheus-rulefiles-0/monitoring-online-boutique-alerts-7456a46a-1d3d-4b86-89c0-3a17c4525524.yaml
+  - PodCrashLooping: state=inactive health=ok for=120s
+  - PodNotReady: state=inactive health=ok for=300s
+  - DeploymentReplicasMismatch: state=inactive health=ok for=600s
+
+all firing/pending rules:
+  - [firing] Watchdog
+  - [firing] InfoInhibitor
+  - [firing] CPUThrottlingHigh
+  - [pending] NodeClockNotSynchronising
+  - [firing] PrometheusNotConnectedToAlertmanagers
+
+## prometheus active alerts
+{"status":"success","data":{"alerts":[{"labels":{"alertname":"Watchdog","severity":"none"},"annotations":{"description":"This is an alert meant to ensure that the entire alerting pipeline is functional.\nThis alert is always firing, therefore it should always be firing in Alertmanager\nand always fire against a receiver. There are integrations with various notification\nmechanisms that send a notification when this alert is not firing. For example the\n\"DeadMansSnitch\" integration in PagerDuty.\n","runbook_url":"https://runbooks.prometheus-operator.dev/runbooks/general/watchdog","summary":"An alert that should always be firing to certify that Alertmanager is working properly."},"state":"firing","activeAt":"2026-10-31T15:45:43.81820298Z","value":"1e+00"},{"labels":{"alertname":"InfoInhibitor","namespace":"qa","severity":"none"},"annotations":{"description":"This is an alert that is used to inhibit info alerts.\nBy themselves, the info-level alerts are sometimes very noisy, but they are relevant when combined with\nother alerts.\nThis alert fires whenever there's a severity=\"info\" alert, and stops firing when another alert with a\nseverity of 'warning' or 'critical' starts firing on the same namespace.\nThis alert should be routed to a null receiver and configured to inhibit alerts with severity=\"info\".\n","runbook_url":"https://runbooks.prometheus-operator.dev/runbooks/general/infoinhibitor","summary":"Info-level alert inhibition."},"state":"firing","activeAt":"2026-10-31T15:46:43.81820298Z","value":"1e+00"},{"labels":{"alertname":"InfoInhibitor","namespace":"kube-system","severity":"none"},"annotations":{"description":"This is an alert that is used to inhibit info alerts.\nBy themselves, the info-level alerts are sometimes very noisy, but they are relevant when combined with\nother alerts.\nThis alert fires whenever there's a severity=\"info\" alert, and stops firing when another alert with a\nseverity of 'warning' or 'critical' starts firing on the same namespace.\nThis alert should be routed to a null receiver and configured to inhibit alerts with severity=\"info\".\n","runbook_url":"https://runbooks.prometheus-operator.dev/runbooks/general/infoinhibitor","summary":"Info-level alert inhibition."},"state":"firing","activeAt":"2026-10-31T15:46:43.81820298Z","value":"1e+00"},{"labels":{"alertname":"PrometheusNotConnectedToAlertmanagers","container":"prometheus","endpoint":"http-web","instance":"10.244.1.96:9090","job":"monitoring-kube-prometheus-prometheus","namespace":"monitoring","pod":"prometheus-monitoring-kube-prometheus-prometheus-0","service":"monitoring-kube-prometheus-prometheus","severity":"warning"},"annotations":{"description":"Prometheus monitoring/prometheus-monitoring-kube-prometheus-prometheus-0 is not connected to any Alertmanagers.","runbook_url":"https://runbooks.prometheus-operator.dev/runbooks/prometheus/prometheusnotconnectedtoalertmanagers","summary":"Prometheus is not connected to any Alertmanagers."},"state":"firing","activeAt":"2026-10-31T15:46:20.0540749Z","value":"0e+00"},{"labels":{"alertname":"CPUThrottlingHigh","container":"kindnet-cni","instance":"172.21.0.3:10250","namespace":"kube-system","pod":"kindnet-mnrzt","service":"monitoring-kube-prometheus-kubelet","severity":"info"},"annotations":{"description":"39.62% throttling of CPU in namespace kube-system for container kindnet-cni in pod kindnet-mnrzt on cluster .","runbook_url":"https://runbooks.prometheus-operator.dev/runbooks/kubernetes/cputhrottlinghigh","summary":"Processes experience elevated CPU throttling."},"state":"firing","activeAt":"2026-10-31T15:46:32.167156829Z","value":"3.9622641509433965e-01"},{"labels":{"alertname":"CPUThrottlingHigh","container":"kindnet-cni","instance":"172.21.0.2:10250","namespace":"kube-system","pod":"kindnet-8tfj7","service":"monitoring-kube-prometheus-kubelet","severity":"info"},"annotations":{"description":"42.68% throttling of CPU in namespace kube-system for container kindnet-cni in pod kindnet-8tfj7 on cluster .","runbook_url":"https://runbooks.prometheus-operator.dev/runbooks/kubernetes/cputhrottlinghigh","summary":"Processes experience elevated CPU throttling."},"state":"pending","activeAt":"2026-10-31T15:59:02.167156829Z","value":"4.26829268292683e-01"},{"labels":{"alertname":"CPUThrottlingHigh","container":"server","instance":"172.21.0.2:10250","namespace":"qa","pod":"paymentservice-58dfdcd8d5-zzq5f","service":"monitoring-kube-prometheus-kubelet","severity":"info"},"annotations":{"description":"33.33% throttling of CPU in namespace qa for container server in pod paymentservice-58dfdcd8d5-zzq5f on cluster .","runbook_url":"https://runbooks.prometheus-operator.dev/runbooks/kubernetes/cputhrottlinghigh","summary":"Processes experience elevated CPU throttling."},"state":"firing","activeAt":"2026-10-31T15:46:02.167156829Z","value":"3.333333333333333e-01"}]}}
+## grafana health
+{
+  "database": "ok",
+  "version": "13.3.0",
+  "commit": "6f8ce3c693b493043ebcd4787566d2b6b118b0f0"
+}

@@ -1,0 +1,74 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations:
+    meta.helm.sh/release-name: online-boutique
+    meta.helm.sh/release-namespace: qa-helm
+  creationTimestamp: "2026-10-31T13:59:07Z"
+  labels:
+    app.kubernetes.io/instance: online-boutique
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: online-boutique
+    helm.sh/chart: online-boutique-0.1.0
+  name: frontend
+  namespace: qa-helm
+  resourceVersion: "28637"
+  uid: 3b5f64b4-23d6-477f-a902-dac3270565d9
+spec:
+  behavior:
+    scaleDown:
+      policies:
+      - periodSeconds: 60
+        type: Pods
+        value: 1
+      selectPolicy: Max
+      stabilizationWindowSeconds: 60
+    scaleUp:
+      policies:
+      - periodSeconds: 30
+        type: Pods
+        value: 1
+      selectPolicy: Max
+      stabilizationWindowSeconds: 0
+  maxReplicas: 4
+  metrics:
+  - resource:
+      name: cpu
+      target:
+        averageUtilization: 50
+        type: Utilization
+    type: Resource
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: frontend
+status:
+  conditions:
+  - lastTransitionTime: "2026-10-31T13:59:22Z"
+    message: recommended size matches current size
+    reason: ReadyForNewScale
+    status: "True"
+    type: AbleToScale
+  - lastTransitionTime: "2026-10-31T13:59:22Z"
+    message: the HPA was able to successfully calculate a replica count from cpu resource
+      utilization (percentage of request)
+    reason: ValidMetricFound
+    status: "True"
+    type: ScalingActive
+  - lastTransitionTime: "2026-10-31T14:30:24Z"
+    message: the desired replica count is decreasing faster than the maximum scale
+      rate
+    reason: ScaleDownLimit
+    status: "True"
+    type: ScalingLimited
+  currentMetrics:
+  - resource:
+      current:
+        averageUtilization: 1
+        averageValue: 1m
+      name: cpu
+    type: Resource
+  currentReplicas: 3
+  desiredReplicas: 3
+  lastScaleTime: "2026-10-31T14:30:24Z"

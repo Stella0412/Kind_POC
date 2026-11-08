@@ -1,0 +1,370 @@
+=== 2026-10-31T22:01:34+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          2m27s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          4m30s   10.244.1.28   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:01:50+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 116%/50%   1         4         1          2m43s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          13s     10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          4m45s   10.244.1.28   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:02:05+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 200%/50%   1         4         2          2m59s
+NAME                        READY   STATUS    RESTARTS   AGE    IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          29s    10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          5m1s   10.244.1.28   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:02:21+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 200%/50%   1         4         2          3m14s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          44s     10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          5m16s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          14s     10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:02:36+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 197%/50%   1         4         3          3m30s
+NAME                        READY   STATUS              RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running             0          60s     10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running             0          5m32s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   0/1     ContainerCreating   0          0s      <none>        qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running             0          30s     10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:02:52+08:00 ===
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 67%/50%   1         4         4          3m45s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          75s     10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          5m47s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   1/1     Running   0          15s     10.244.1.41   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          45s     10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:03:08+08:00 ===
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 67%/50%   1         4         4          4m1s
+NAME                        READY   STATUS    RESTARTS   AGE    IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          91s    10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          6m3s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   1/1     Running   0          31s    10.244.1.41   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          61s    10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:03:23+08:00 ===
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 67%/50%   1         4         4          4m16s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          107s    10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          6m19s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   1/1     Running   0          47s     10.244.1.41   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          77s     10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:03:39+08:00 ===
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 49%/50%   1         4         4          4m32s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          2m2s    10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          6m34s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   1/1     Running   0          62s     10.244.1.41   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          92s     10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:03:54+08:00 ===
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 50%/50%   1         4         4          4m48s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          2m18s   10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          6m50s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   1/1     Running   0          78s     10.244.1.41   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          108s    10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:04:10+08:00 ===
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 51%/50%   1         4         4          5m3s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          2m33s   10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          7m5s    10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   1/1     Running   0          93s     10.244.1.41   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          2m3s    10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:04:26+08:00 ===
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 50%/50%   1         4         4          5m19s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          2m49s   10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          7m21s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   1/1     Running   0          109s    10.244.1.41   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          2m19s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:04:41+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         4          5m34s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          3m5s    10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          7m37s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   1/1     Running   0          2m5s    10.244.1.41   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          2m35s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:04:57+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         4          5m50s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          3m20s   10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          7m52s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   1/1     Running   0          2m20s   10.244.1.41   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          2m50s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:05:12+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         4          6m6s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          3m36s   10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          8m8s    10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-pb7hq   1/1     Running   0          2m36s   10.244.1.41   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          3m6s    10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:05:28+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         4          6m21s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          3m51s   10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          8m23s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          3m21s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:05:43+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         3          6m37s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          4m7s    10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          8m39s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          3m37s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:05:59+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         3          6m52s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          4m22s   10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          8m54s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          3m52s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:06:15+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         3          7m8s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-8mlwj   1/1     Running   0          4m38s   10.244.1.39   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          9m10s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          4m8s    10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:06:30+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         3          7m23s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          9m26s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          4m24s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:06:46+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 132%/50%   1         4         2          7m39s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   0/1     Running   0          9s      10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          9m41s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   0/1     Running   0          9s      10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          4m39s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:07:01+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 200%/50%   1         4         4          7m55s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          25s     10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          9m57s   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          25s     10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          4m55s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:07:17+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 200%/50%   1         4         4          8m10s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          40s     10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          10m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          40s     10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          5m10s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:07:33+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 133%/50%   1         4         4          8m26s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          56s     10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          10m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          56s     10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          5m26s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:07:48+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 100%/50%   1         4         4          8m41s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          72s     10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          10m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          72s     10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          5m42s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:08:04+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 100%/50%   1         4         4          8m57s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          87s     10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          10m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          87s     10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          5m57s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:08:19+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 100%/50%   1         4         4          9m13s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          103s    10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          11m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          103s    10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          6m13s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:08:35+08:00 ===
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 94%/50%   1         4         4          9m28s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          118s    10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          11m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          118s    10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          6m28s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:08:51+08:00 ===
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 93%/50%   1         4         4          9m44s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          2m14s   10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          11m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          2m14s   10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          6m44s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:09:06+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 100%/50%   1         4         4          9m59s
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          2m30s   10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          12m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          2m30s   10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          7m      10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:09:22+08:00 ===
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 100%/50%   1         4         4          10m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          2m45s   10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          12m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          2m45s   10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          7m15s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:09:37+08:00 ===
+NAME       REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 21%/50%   1         4         4          10m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          3m1s    10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          12m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          3m1s    10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          7m31s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:09:53+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         4          10m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          3m16s   10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          12m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          3m16s   10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          7m46s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:10:09+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         4          11m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-5rnzp   1/1     Running   0          3m32s   10.244.1.43   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          13m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          3m32s   10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          8m2s    10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:10:24+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         4          11m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          13m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          3m47s   10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          8m17s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:10:40+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         3          11m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          13m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          4m3s    10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          8m33s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:10:55+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         3          11m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          13m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          4m19s   10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          8m49s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:11:11+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         3          12m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          14m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-f6ld6   1/1     Running   0          4m34s   10.244.1.42   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          9m4s    10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:11:26+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         3          12m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          14m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          9m20s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:11:42+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 2%/50%   1         4         2          12m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          14m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          9m35s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:11:58+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         2          12m
+NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          14m     10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          9m51s   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:12:13+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         2          13m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-9hxnk   1/1     Running   0          15m   10.244.1.28   qa-cluster-worker   <none>           <none>
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          10m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:12:29+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         2          13m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          10m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:12:44+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          13m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          10m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:13:00+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          13m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          10m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:13:15+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          14m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          11m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:13:31+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          14m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          11m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:13:47+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          14m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          11m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:14:02+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          14m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          11m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:14:18+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          15m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          12m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:14:33+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          15m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          12m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:14:49+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          15m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          12m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:15:04+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          15m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          12m   10.244.1.40   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T22:15:20+08:00 ===
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          16m
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+frontend-6bc5cfbcd6-tj74z   1/1     Running   0          13m   10.244.1.40   qa-cluster-worker   <none>           <none>

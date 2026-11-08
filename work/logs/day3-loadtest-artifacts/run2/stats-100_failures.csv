@@ -1,0 +1,12 @@
+Method,Name,Error,Occurrences
+POST,/cart,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",5
+GET,/product/9SIQT8TOJO,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",1
+GET,/product/66VCHSJNUP,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",1
+GET,/product/6E92ZMYYFZ,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",2
+GET,/product/1YMWWN1N4O,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",3
+GET,/,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",6
+GET,/product/LS4PSXUNUM,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",1
+GET,/product/L9ECAV7KIM,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",5
+GET,/product/2ZYFJ3GM2N,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",1
+GET,/product/0PUK6V6EV0,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",2
+GET,/product/OLJCESPC7Z,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",2

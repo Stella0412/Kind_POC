@@ -1,0 +1,41 @@
+== 2026-11-01T19:17:55+08:00 apply demo loadtest (50 users / 2m) ==
+job.batch/loadtest-demo created
+== 2026-11-01T19:17:55+08:00 HPA watch ==
+frontend   Deployment/frontend   cpu: 1%/50%   1     4     1     9h
+frontend   Deployment/frontend   cpu: 1%/50%   1     4     1     9h
+frontend   Deployment/frontend   cpu: 1%/50%   1     4     1     9h
+frontend   Deployment/frontend   cpu: 1%/50%   1     4     1     9h
+frontend   Deployment/frontend   cpu: 160%/50%   1     4     1     9h
+frontend   Deployment/frontend   cpu: 201%/50%   1     4     2     9h
+frontend   Deployment/frontend   cpu: 201%/50%   1     4     2     9h
+frontend   Deployment/frontend   cpu: 200%/50%   1     4     2     9h
+frontend   Deployment/frontend   cpu: 100%/50%   1     4     3     9h
+frontend   Deployment/frontend   cpu: 100%/50%   1     4     3     9h
+frontend   Deployment/frontend   cpu: 100%/50%   1     4     3     9h
+frontend   Deployment/frontend   cpu: 66%/50%   1     4     4     9h
+frontend   Deployment/frontend   cpu: 66%/50%   1     4     4     9h
+frontend   Deployment/frontend   cpu: 66%/50%   1     4     4     9h
+frontend   Deployment/frontend   cpu: 47%/50%   1     4     4     9h
+frontend   Deployment/frontend   cpu: 47%/50%   1     4     4     9h
+job.batch/loadtest-demo condition met
+== 2026-11-01T19:20:41+08:00 loadtest summary ==
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregated                                                      4057     0(0.00%)  |    1265     129    3141    1200  |   34.04    0.00
+
+Response time percentiles (approximated)
+ Type     Name                                                              50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ GET      /                                                                1400   1500   1600   1600   1800   1900   2100   2300   2700   3100   3100   1071
+ POST     /cart                                                            1800   2000   2100   2100   2200   2400   2500   2600   3100   3100   3100    653
+ GET      /product/0PUK6V6EV0                                              1000   1100   1200   1200   1300   1500   1700   1700   1900   1900   1900    229
+ GET      /product/1YMWWN1N4O                                              1000   1100   1200   1200   1300   1400   1400   1600   1900   1900   1900    252
+ GET      /product/2ZYFJ3GM2N                                              1000   1100   1200   1200   1400   1400   1700   2000   2200   2200   2200    270
+ GET      /product/66VCHSJNUP                                              1000   1100   1200   1200   1300   1400   1600   1700   2200   2200   2200    278
+ GET      /product/6E92ZMYYFZ                                              1000   1100   1200   1200   1400   1400   1600   1700   1900   1900   1900    264
+ GET      /product/9SIQT8TOJO                                              1000   1100   1200   1200   1300   1400   1600   1600   1700   1700   1700    277
+ GET      /product/L9ECAV7KIM                                              1000   1100   1200   1200   1300   1400   1500   1700   2000   2000   2000    262
+ GET      /product/LS4PSXUNUM                                              1000   1100   1200   1200   1300   1400   1500   1600   1600   1600   1600    242
+ GET      /product/OLJCESPC7Z                                              1000   1100   1200   1200   1300   1400   1500   1600   1800   1800   1800    259
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ None     Aggregated                                                       1200   1400   1500   1600   1800   2100   2200   2400   2700   3100   3100   4057
+

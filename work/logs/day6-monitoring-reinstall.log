@@ -1,0 +1,137 @@
+== 2026-11-01T19:11:58+08:00 reinstall monitoring ==
+== pull node-exporter ==
+v1.12.1-distroless: Pulling from prometheus/node-exporter
+341a51fcd201: Pulling fs layer
+5b3013706a46: Pulling fs layer
+1c193acf1cd1: Pulling fs layer
+9d2753d762cc: Pulling fs layer
+8029962f461f: Pulling fs layer
+9cd8e28f1c22: Pulling fs layer
+d82bc7a76a83: Pulling fs layer
+efae86a3fb38: Pulling fs layer
+68e4cd60e60f: Pulling fs layer
+0f8b424aa0b9: Pulling fs layer
+0783a66ae749: Pulling fs layer
+77964957095d: Pulling fs layer
+d557676654e5: Pulling fs layer
+411e1c946a02: Pulling fs layer
+61a2ffbba4c0: Pulling fs layer
+0f8b424aa0b9: Already exists
+0783a66ae749: Already exists
+411e1c946a02: Already exists
+efae86a3fb38: Already exists
+68e4cd60e60f: Already exists
+d82bc7a76a83: Already exists
+d557676654e5: Already exists
+5b3013706a46: Already exists
+9d2753d762cc: Already exists
+9cd8e28f1c22: Download complete
+1c193acf1cd1: Download complete
+5b3013706a46: Pull complete
+1c193acf1cd1: Pull complete
+77964957095d: Download complete
+8029962f461f: Download complete
+8029962f461f: Pull complete
+9d2753d762cc: Pull complete
+9cd8e28f1c22: Pull complete
+0f8b424aa0b9: Pull complete
+68e4cd60e60f: Pull complete
+d82bc7a76a83: Pull complete
+d557676654e5: Pull complete
+61a2ffbba4c0: Download complete
+0783a66ae749: Pull complete
+411e1c946a02: Pull complete
+efae86a3fb38: Pull complete
+77964957095d: Pull complete
+61a2ffbba4c0: Pull complete
+341a51fcd201: Download complete
+341a51fcd201: Pull complete
+Digest: sha256:8c9bac11973b94b59be88d6e11fee4429aa743c8846cdc75d65b18db33f6a106
+Status: Downloaded newer image for quay.m.daocloud.io/prometheus/node-exporter:v1.12.1-distroless
+quay.m.daocloud.io/prometheus/node-exporter:v1.12.1-distroless
+== pull webhook certgen ==
+1.11.0: Pulling from jkroepke/kube-webhook-certgen
+5d6ee0a304b2: Pulling fs layer
+44136fa355b3: Already exists
+dceeb8e0e906: Download complete
+acd04d9f0f5b: Download complete
+5d6ee0a304b2: Download complete
+5d6ee0a304b2: Pull complete
+Digest: sha256:778d97dc3986355625e14392419b3364c487a7c807d4d86ddad1df369129b082
+Status: Downloaded newer image for ghcr.io/jkroepke/kube-webhook-certgen:1.11.0
+ghcr.io/jkroepke/kube-webhook-certgen:1.11.0
+== 2026-11-01T19:13:01+08:00 load 8 images ==
+== 2026-11-01T19:14:35+08:00 helm install ==
+Release "monitoring" does not exist. Installing it now.
+NAME: monitoring
+LAST DEPLOYED: Sun Nov  1 19:14:39 2026
+NAMESPACE: monitoring
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+NOTES:
+kube-prometheus-stack has been installed. Check its status by running:
+  kubectl --namespace monitoring get pods -l "release=monitoring"
+
+Get Grafana 'admin' user password by running:
+
+  kubectl --namespace monitoring get secrets monitoring-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
+
+Access Grafana local instance:
+
+  export POD_NAME=$(kubectl --namespace monitoring get pod -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=monitoring" -oname)
+  kubectl --namespace monitoring port-forward $POD_NAME 3000
+
+Get your grafana admin user password by running:
+
+  kubectl get secret --namespace monitoring -l app.kubernetes.io/component=admin-secret -o jsonpath="{.items[0].data.admin-password}" | base64 --decode ; echo
+
+
+Visit https://github.com/prometheus-operator/kube-prometheus for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator.
+== 2026-11-01T19:14:52+08:00 apply alerts ==
+prometheusrule.monitoring.coreos.com/online-boutique-alerts created
+== 2026-11-01T19:15:24+08:00 wait grafana ==
+deployment "monitoring-grafana" successfully rolled out
+NAME                                                   READY   STATUS    RESTARTS   AGE
+monitoring-grafana-6f8fd474ff-m7t2s                    3/3     Running   0          39s
+monitoring-kube-prometheus-operator-55f6b6d747-wqnmq   1/1     Running   0          39s
+monitoring-kube-state-metrics-5f78cc4856-prnhd         1/1     Running   0          39s
+monitoring-prometheus-node-exporter-t6nl4              1/1     Running   0          39s
+monitoring-prometheus-node-exporter-zlbwb              1/1     Running   0          39s
+prometheus-monitoring-kube-prometheus-prometheus-0     2/2     Running   0          36s
+== 2026-11-01T19:15:35+08:00 prometheus rules ==
+online-boutique.rules PodCrashLooping state=inactive health=ok
+online-boutique.rules PodNotReady state=inactive health=ok
+online-boutique.rules DeploymentReplicasMismatch state=inactive health=ok
+== 2026-11-01T19:16:15+08:00 grafana health ==
+{
+  "database": "ok",
+  "version": "13.3.0",
+  "commit": "6f8ce3c693b493043ebcd4787566d2b6b118b0f0"
+}== 2026-11-01T19:17:11+08:00 final state ==
+NAME                                                   READY   STATUS    RESTARTS   AGE     IP            NODE                       NOMINATED NODE   READINESS GATES
+monitoring-grafana-6f8fd474ff-m7t2s                    3/3     Running   0          2m25s   10.244.1.17   qa-cluster-worker          <none>           <none>
+monitoring-kube-prometheus-operator-55f6b6d747-wqnmq   1/1     Running   0          2m25s   10.244.1.16   qa-cluster-worker          <none>           <none>
+monitoring-kube-state-metrics-5f78cc4856-prnhd         1/1     Running   0          2m25s   10.244.1.18   qa-cluster-worker          <none>           <none>
+monitoring-prometheus-node-exporter-t6nl4              1/1     Running   0          2m25s   172.21.0.3    qa-cluster-control-plane   <none>           <none>
+monitoring-prometheus-node-exporter-zlbwb              1/1     Running   0          2m25s   172.21.0.2    qa-cluster-worker          <none>           <none>
+prometheus-monitoring-kube-prometheus-prometheus-0     2/2     Running   0          2m22s   10.244.1.20   qa-cluster-worker          <none>           <none>
+NAME                       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+qa-cluster-control-plane   162m         0%       1769Mi          22%         
+qa-cluster-worker          297m         0%       2973Mi          38%         
+NAME                                                   CPU(cores)   MEMORY(bytes)   
+monitoring-grafana-6f8fd474ff-m7t2s                    17m          714Mi           
+monitoring-kube-prometheus-operator-55f6b6d747-wqnmq   4m           81Mi            
+monitoring-kube-state-metrics-5f78cc4856-prnhd         4m           64Mi            
+monitoring-prometheus-node-exporter-t6nl4              1m           23Mi            
+monitoring-prometheus-node-exporter-zlbwb              2m           25Mi            
+prometheus-monitoring-kube-prometheus-prometheus-0     15m          249Mi           
+monitoring-grafana                      ClusterIP   10.96.149.144   <none>        80/TCP              2m26s
+monitoring-kube-prometheus-operator     ClusterIP   10.96.71.194    <none>        443/TCP             2m26s
+monitoring-kube-prometheus-prometheus   ClusterIP   10.96.171.206   <none>        9090/TCP,8080/TCP   2m26s
+monitoring-prometheus-node-exporter     ClusterIP   10.96.38.25     <none>        9100/TCP            2m26s
+prometheus-operated                     ClusterIP   None            <none>        9090/TCP            2m23s
+== 2026-11-01T19:20:52+08:00 prometheus sample check ==
+frontend replicas: 4
+qa-helm container cpu series: 42
+frontend cpu cores (5m rate): 0.17334837489717927

@@ -1,0 +1,37 @@
+# 演示用短压测：50 用户 / 2 分钟，供录制视频时现场触发 HPA 与 Grafana 曲线。
+# 前置：kubectl apply -f work/manifests/loadtest/configmap.yaml
+# 运行：kubectl apply -f work/manifests/loadtest/job-demo.yaml
+# 查看：kubectl get hpa frontend -n qa-helm -w
+# 清理：kubectl delete job loadtest-demo -n qa-helm
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: loadtest-demo
+  namespace: qa-helm
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: main
+          image: gcr.io/google-samples/microservices-demo/loadgenerator:v0.3.1
+          imagePullPolicy: IfNotPresent
+          command:
+            - /bin/sh
+            - -c
+            - |
+              locust -f /locust/locustfile-fast.py \
+                --host=http://frontend:80 \
+                --headless -u 50 -r 10 --run-time 2m \
+                --only-summary --exit-code-on-error 0
+          resources:
+            requests: { cpu: 500m, memory: 256Mi }
+            limits: { cpu: "2", memory: 512Mi }
+          volumeMounts:
+            - name: locustfile
+              mountPath: /locust
+      volumes:
+        - name: locustfile
+          configMap:
+            name: locustfile-fast

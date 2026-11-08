@@ -1,0 +1,31 @@
+===== 2026-10-31 21:15:32 day2 final state =====
+--- helm history ---
+REVISION	UPDATED                 	STATUS    	CHART                	APP VERSION	DESCRIPTION     
+1       	Sat Oct 31 20:35:00 2026	superseded	online-boutique-0.1.0	0.3.4      	Install complete
+2       	Sat Oct 31 20:58:37 2026	superseded	online-boutique-0.1.0	0.3.4      	Upgrade complete
+3       	Sat Oct 31 20:59:27 2026	superseded	online-boutique-0.1.0	0.3.4      	Rollback to 1   
+4       	Sat Oct 31 20:59:41 2026	superseded	online-boutique-0.1.0	0.3.4      	Upgrade complete
+5       	Sat Oct 31 21:07:00 2026	deployed  	online-boutique-0.1.0	0.3.4      	Upgrade complete
+--- deployment frontend image ---
+local/frontend:day2
+--- pods ---
+NAME                                     READY   STATUS      RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+adservice-58c8d74f7b-f2v8q               1/1     Running     0          40m     10.244.1.20   qa-cluster-worker   <none>           <none>
+cartservice-6d9698b854-ftkrq             1/1     Running     0          40m     10.244.1.19   qa-cluster-worker   <none>           <none>
+checkoutservice-85988c9df-8q8wn          1/1     Running     0          40m     10.244.1.18   qa-cluster-worker   <none>           <none>
+currencyservice-df5c847bf-kjqtb          1/1     Running     0          40m     10.244.1.15   qa-cluster-worker   <none>           <none>
+emailservice-5947c5d46c-wgmkb            1/1     Running     0          40m     10.244.1.16   qa-cluster-worker   <none>           <none>
+frontend-85944f8cf4-h9dqm                1/1     Running     0          7m43s   10.244.1.30   qa-cluster-worker   <none>           <none>
+loadgenerator-hfwrr                      0/1     Completed   0          5m21s   10.244.1.31   qa-cluster-worker   <none>           <none>
+paymentservice-687f89b58f-nnfwg          1/1     Running     0          40m     10.244.1.14   qa-cluster-worker   <none>           <none>
+productcatalogservice-58f5dfdf89-d68nc   1/1     Running     0          40m     10.244.1.22   qa-cluster-worker   <none>           <none>
+recommendationservice-7c767c85cc-l72xm   1/1     Running     0          40m     10.244.1.17   qa-cluster-worker   <none>           <none>
+redis-cart-6d7f874d5d-77l6m              1/1     Running     0          40m     10.244.1.23   qa-cluster-worker   <none>           <none>
+shippingservice-688dc9968f-lzzt6         1/1     Running     0          40m     10.244.1.21   qa-cluster-worker   <none>           <none>
+--- endpoints count ---
+12
+--- images ---
+local/frontend:day2  52.8MB
+gcr.io/google-samples/microservices-demo/frontend:v0.3.1  55.9MB
+--- node image ---
+    "id": "sha256:66126207b0619a1aee1dac968827dc33894b12fa9ad3b2f91e20767b06f9c93e",

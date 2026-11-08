@@ -1,0 +1,2 @@
+bash work/scripts/smoke-test.sh
+SMOKE OK: homepage / product / cart / checkout

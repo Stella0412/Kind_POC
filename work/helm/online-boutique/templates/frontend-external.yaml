@@ -1,0 +1,17 @@
+{{- if .Values.frontendExternal.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-external
+  labels:
+    {{- include "online-boutique.labels" . | nindent 4 }}
+    app: frontend
+spec:
+  type: {{ .Values.frontendExternal.type }}
+  selector:
+    app: frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+{{- end }}

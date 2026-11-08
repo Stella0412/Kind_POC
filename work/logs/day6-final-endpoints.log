@@ -1,0 +1,12 @@
+NAME                    ENDPOINTS          AGE
+adservice               10.244.1.5:9555    9h
+cartservice             10.244.1.10:7070   9h
+checkoutservice         10.244.1.8:5050    9h
+currencyservice         10.244.1.7:7000    9h
+emailservice            10.244.1.13:8080   9h
+frontend                10.244.1.14:8080   9h
+paymentservice          10.244.1.9:50051   9h
+productcatalogservice   10.244.1.4:3550    9h
+recommendationservice   10.244.1.11:8080   9h
+redis-cart              10.244.1.12:6379   9h
+shippingservice         10.244.1.6:50051   9h

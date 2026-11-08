@@ -1,0 +1,27 @@
+===== 2026-10-31 15:59:25 =====
+
+--- 工具版本 ---
+kind v0.33.0 go1.26.7 windows/amd64
+version.BuildInfo{Version:"v4.3.1", GitCommit:"c0d08d0d6d9424d4a14febb5e8a3e51b0dd00dff", GitTreeState:"clean", GoVersion:"go1.27.2", KubeClientVersion:"v1.37"}
+Client Version: v1.36.1
+Kustomize Version: v5.8.1
+Docker version 29.8.2, build 7fc2dff
+git version 2.55.0.windows.5
+Python 3.14.7
+
+--- Docker 状态 ---
+ServerVersion=29.8.2
+CPUs=32 MemBytes=8187170816 Driver=overlayfs
+Mirrors=["https://hub.rat.dev/","https://docker.m.daocloud.io/"]
+
+--- 磁盘 ---
+D:              752G  331G  422G  44% /d
+
+--- 仓库 ---
+ae6cf63 Remove custom sidebar collapse
+62051a3 Release v0.3.4
+
+--- Kubeconfig ---
+KUBECONFIG=D:\docker_project\work\kubeconfig
+CURRENT   NAME              CLUSTER           AUTHINFO          NAMESPACE
+*         kind-qa-cluster   kind-qa-cluster   kind-qa-cluster   

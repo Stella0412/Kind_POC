@@ -1,0 +1,42 @@
+prometheusrule.monitoring.coreos.com/online-boutique-alerts created
+NAME                                                              AGE
+monitoring-kube-prometheus-alertmanager.rules                     20m
+monitoring-kube-prometheus-config-reloaders                       20m
+monitoring-kube-prometheus-general.rules                          20m
+monitoring-kube-prometheus-k8s.rules.container-cpu-usage-second   20m
+monitoring-kube-prometheus-k8s.rules.container-memory-cache       20m
+monitoring-kube-prometheus-k8s.rules.container-memory-rss         20m
+monitoring-kube-prometheus-k8s.rules.container-memory-swap        20m
+monitoring-kube-prometheus-k8s.rules.container-memory-working-s   20m
+monitoring-kube-prometheus-k8s.rules.container-resource           20m
+monitoring-kube-prometheus-k8s.rules.pod-owner                    20m
+monitoring-kube-prometheus-kube-apiserver-availability.rules      20m
+monitoring-kube-prometheus-kube-apiserver-burnrate.rules          20m
+monitoring-kube-prometheus-kube-apiserver-histogram.rules         20m
+monitoring-kube-prometheus-kube-apiserver-slos                    20m
+monitoring-kube-prometheus-kube-prometheus-general.rules          20m
+monitoring-kube-prometheus-kube-prometheus-node-recording.rules   20m
+monitoring-kube-prometheus-kube-state-metrics                     20m
+monitoring-kube-prometheus-kubelet.rules                          20m
+monitoring-kube-prometheus-kubernetes-apps                        20m
+monitoring-kube-prometheus-kubernetes-resources                   20m
+monitoring-kube-prometheus-kubernetes-storage                     20m
+monitoring-kube-prometheus-kubernetes-system                      20m
+monitoring-kube-prometheus-kubernetes-system-apiserver            20m
+monitoring-kube-prometheus-kubernetes-system-kubelet              20m
+monitoring-kube-prometheus-node-exporter                          20m
+monitoring-kube-prometheus-node-exporter.rules                    20m
+monitoring-kube-prometheus-node-network                           20m
+monitoring-kube-prometheus-node.rules                             20m
+monitoring-kube-prometheus-prometheus                             20m
+monitoring-kube-prometheus-prometheus-operator                    20m
+online-boutique-alerts                                            1s
+{"matchLabels":{"release":"monitoring"}}
+namespace/alert-test created
+deployment.apps/crashloop-demo created
+NAME                              READY   STATUS             RESTARTS      AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+crashloop-demo-7659896979-5mx5j   0/1     CrashLoopBackOff   2 (14s ago)   30s   10.244.1.93   qa-cluster-worker   <none>           <none>
+=== 2026-10-31T23:45:02+08:00 firing alerts (PodCrashLooping) ===
+firing 2026-10-31T15:38:16.133650153Z alert-test crashloop-demo-7659896979-5mx5j
+namespace "alert-test" deleted
+prometheusrule.monitoring.coreos.com/online-boutique-alerts configured

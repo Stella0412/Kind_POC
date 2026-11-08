@@ -1,0 +1,10 @@
+# 本项目使用的 Kind 双节点配置（control-plane + worker）。
+# 复制自上游 DevOps-Projects project-41 的 kind-config/config.yaml。
+# 放在 work/ 下是为了让 CI 和复现脚本不依赖被 .gitignore 忽略的 repos/。
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+    image: kindest/node:v1.32.2
+  - role: worker
+    image: kindest/node:v1.32.2

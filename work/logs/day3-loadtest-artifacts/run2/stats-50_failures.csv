@@ -1,0 +1,10 @@
+Method,Name,Error,Occurrences
+POST,/cart,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",2
+GET,/product/LS4PSXUNUM,"('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",1
+GET,/product/9SIQT8TOJO,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",3
+GET,/product/66VCHSJNUP,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",1
+GET,/,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",4
+GET,/product/LS4PSXUNUM,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",1
+GET,/product/0PUK6V6EV0,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",1
+GET,/product/OLJCESPC7Z,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",1
+POST,/cart,"('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",2

@@ -1,0 +1,7 @@
+configmap/locustfile-fast created
+job.batch/loadtest-stepped created
+NAME                         STATUS    COMPLETIONS   DURATION   AGE
+job.batch/loadtest-stepped   Running   0/1           0s         0s
+
+NAME                         READY   STATUS              RESTARTS   AGE
+pod/loadtest-stepped-x7cwj   0/1     ContainerCreating   0          0s

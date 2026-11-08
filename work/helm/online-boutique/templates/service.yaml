@@ -1,0 +1,22 @@
+{{- range $name, $svc := .Values.services }}
+{{- with $svc.service }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $name }}
+  labels:
+    {{- include "online-boutique.labels" $ | nindent 4 }}
+    app: {{ $name }}
+spec:
+  type: {{ .type | default "ClusterIP" }}
+  selector:
+    app: {{ $name }}
+  ports:
+    {{- range .ports }}
+    - name: {{ .name }}
+      port: {{ .port }}
+      targetPort: {{ .targetPort }}
+    {{- end }}
+{{- end }}
+{{- end }}

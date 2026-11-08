@@ -1,0 +1,33 @@
+Name:                                                  frontend
+Namespace:                                             qa-helm
+Labels:                                                app.kubernetes.io/instance=online-boutique
+                                                       app.kubernetes.io/managed-by=Helm
+                                                       app.kubernetes.io/name=online-boutique
+                                                       helm.sh/chart=online-boutique-0.1.0
+Annotations:                                           meta.helm.sh/release-name: online-boutique
+                                                       meta.helm.sh/release-namespace: qa-helm
+CreationTimestamp:                                     Sat, 31 Oct 2026 21:59:07 +0800
+Reference:                                             Deployment/frontend
+Metrics:                                               ( current / target )
+  resource cpu on pods  (as a percentage of request):  1% (1m) / 50%
+Min replicas:                                          1
+Max replicas:                                          4
+Behavior:
+  Scale Up:
+    Stabilization Window: 0 seconds
+    Select Policy: Max
+    Policies:
+      - Type: Pods  Value: 1  Period: 30 seconds
+  Scale Down:
+    Stabilization Window: 60 seconds
+    Select Policy: Max
+    Policies:
+      - Type: Pods  Value: 1  Period: 60 seconds
+Deployment pods:    1 current / 1 desired
+Conditions:
+  Type            Status  Reason              Message
+  ----            ------  ------              -------
+  AbleToScale     True    ReadyForNewScale    recommended size matches current size
+  ScalingActive   True    ValidMetricFound    the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)
+  ScalingLimited  False   DesiredWithinRange  the desired count is within the acceptable range
+Events:           <none>

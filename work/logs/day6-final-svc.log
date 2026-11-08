@@ -1,0 +1,12 @@
+NAME                    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)     AGE
+adservice               ClusterIP   10.96.91.14     <none>        9555/TCP    9h
+cartservice             ClusterIP   10.96.129.210   <none>        7070/TCP    9h
+checkoutservice         ClusterIP   10.96.170.193   <none>        5050/TCP    9h
+currencyservice         ClusterIP   10.96.172.85    <none>        7000/TCP    9h
+emailservice            ClusterIP   10.96.217.251   <none>        5000/TCP    9h
+frontend                ClusterIP   10.96.234.207   <none>        80/TCP      9h
+paymentservice          ClusterIP   10.96.8.6       <none>        50051/TCP   9h
+productcatalogservice   ClusterIP   10.96.21.179    <none>        3550/TCP    9h
+recommendationservice   ClusterIP   10.96.78.85     <none>        8080/TCP    9h
+redis-cart              ClusterIP   10.96.22.255    <none>        6379/TCP    9h
+shippingservice         ClusterIP   10.96.31.36     <none>        50051/TCP   9h

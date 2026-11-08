@@ -1,0 +1,8 @@
+===== 2026-10-31 day2 最终验证 =====
+qa:       11 Running
+qa-helm:  11 Running + loadgenerator 1 Completed
+frontend 镜像: local/frontend:day2
+平台标识: local（截图 work/screenshots/day2-helm-selfbuilt-frontend.png）
+首页延迟: curl time_total ~0.04s（修复前 ~4.0s）
+下单链路: GET / 200 -> POST /cart 302 -> POST /cart/checkout 200 "order is complete!"
+压测: 666 请求 / 0 失败 / 2.23 RPS / 中位 19ms / P95 85ms

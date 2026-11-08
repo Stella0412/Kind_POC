@@ -1,0 +1,165 @@
+=== users=20 start 2026-10-31T14:16:03+00:00 ===
+[2026-10-31 14:16:04,432] loadtest-stepped-j9plp/INFO/locust.main: Run time limit set to 180 seconds
+[2026-10-31 14:16:04,432] loadtest-stepped-j9plp/INFO/locust.main: Starting Locust 1.3.1
+[2026-10-31 14:16:04,433] loadtest-stepped-j9plp/INFO/locust.runners: Spawning 20 users at the rate 10 users/s (0 users already running)...
+[2026-10-31 14:16:06,355] loadtest-stepped-j9plp/INFO/locust.runners: All users spawned: WebsiteUser: 20 (0 already running)
+[2026-10-31 14:19:04,063] loadtest-stepped-j9plp/INFO/locust.main: Time limit reached. Stopping Locust.
+[2026-10-31 14:19:04,063] loadtest-stepped-j9plp/INFO/locust.runners: Stopping 20 users
+[2026-10-31 14:19:04,066] loadtest-stepped-j9plp/INFO/locust.runners: 20 Users have been stopped
+[2026-10-31 14:19:04,066] loadtest-stepped-j9plp/INFO/locust.main: Running teardowns...
+[2026-10-31 14:19:04,066] loadtest-stepped-j9plp/INFO/locust.main: Shutting down (exit code 0), bye.
+[2026-10-31 14:19:04,066] loadtest-stepped-j9plp/INFO/locust.main: Cleaning up runner...
+ Name                                                          # reqs      # fails  |     Avg     Min     Max  Median  |   req/s failures/s
+--------------------------------------------------------------------------------------------------------------------------------------------
+ GET /                                                           1239     0(0.00%)  |     562      20    1046     560  |    6.90    0.00
+ POST /cart                                                       820     0(0.00%)  |     903     304    1458     900  |    4.57    0.00
+ GET /product/0PUK6V6EV0                                          322     0(0.00%)  |     451      17     763     450  |    1.79    0.00
+ GET /product/1YMWWN1N4O                                          346     0(0.00%)  |     459     182     877     450  |    1.93    0.00
+ GET /product/2ZYFJ3GM2N                                          305     0(0.00%)  |     456      80     918     460  |    1.70    0.00
+ GET /product/66VCHSJNUP                                          323     0(0.00%)  |     460     197    1053     450  |    1.80    0.00
+ GET /product/6E92ZMYYFZ                                          294     0(0.00%)  |     454      18     844     450  |    1.64    0.00
+ GET /product/9SIQT8TOJO                                          315     0(0.00%)  |     472     133     769     470  |    1.75    0.00
+ GET /product/L9ECAV7KIM                                          330     0(0.00%)  |     456     135     949     440  |    1.84    0.00
+ GET /product/LS4PSXUNUM                                          313     0(0.00%)  |     459     251     795     460  |    1.74    0.00
+ GET /product/OLJCESPC7Z                                          320     0(0.00%)  |     463     210     771     460  |    1.78    0.00
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregated                                                      4927     0(0.00%)  |     559      17    1458     510  |   27.44    0.00
+
+Response time percentiles (approximated)
+ Type     Name                                                              50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ GET      /                                                                 560    600    630    650    700    760    800    840    990   1000   1000   1239
+ POST     /cart                                                             900    960   1000   1000   1100   1200   1300   1300   1500   1500   1500    820
+ GET      /product/0PUK6V6EV0                                               450    480    510    540    570    600    660    700    760    760    760    322
+ GET      /product/1YMWWN1N4O                                               460    490    520    530    590    620    660    790    880    880    880    346
+ GET      /product/2ZYFJ3GM2N                                               460    500    520    540    590    630    660    690    920    920    920    305
+ GET      /product/66VCHSJNUP                                               450    490    520    540    580    630    700    790   1100   1100   1100    323
+ GET      /product/6E92ZMYYFZ                                               450    490    520    540    580    610    680    700    840    840    840    294
+ GET      /product/9SIQT8TOJO                                               470    510    540    550    590    640    690    710    770    770    770    315
+ GET      /product/L9ECAV7KIM                                               450    500    520    540    580    610    650    670    950    950    950    330
+ GET      /product/LS4PSXUNUM                                               460    500    510    530    570    600    670    690    800    800    800    313
+ GET      /product/OLJCESPC7Z                                               460    500    530    540    580    630    660    690    770    770    770    320
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ None     Aggregated                                                        510    580    630    680    860   1000   1100   1200   1400   1500   1500   4927
+
+=== users=20 end 2026-10-31T14:19:04+00:00 ===
+=== users=50 start 2026-10-31T14:21:04+00:00 ===
+[2026-10-31 14:21:04,647] loadtest-stepped-j9plp/INFO/locust.main: Run time limit set to 180 seconds
+[2026-10-31 14:21:04,647] loadtest-stepped-j9plp/INFO/locust.main: Starting Locust 1.3.1
+[2026-10-31 14:21:04,648] loadtest-stepped-j9plp/INFO/locust.runners: Spawning 50 users at the rate 10 users/s (0 users already running)...
+[2026-10-31 14:21:09,597] loadtest-stepped-j9plp/INFO/locust.runners: All users spawned: WebsiteUser: 50 (0 already running)
+[2026-10-31 14:24:04,404] loadtest-stepped-j9plp/INFO/locust.main: Time limit reached. Stopping Locust.
+[2026-10-31 14:24:04,404] loadtest-stepped-j9plp/INFO/locust.runners: Stopping 50 users
+[2026-10-31 14:24:04,412] loadtest-stepped-j9plp/INFO/locust.runners: 50 Users have been stopped
+[2026-10-31 14:24:04,412] loadtest-stepped-j9plp/INFO/locust.main: Running teardowns...
+[2026-10-31 14:24:04,412] loadtest-stepped-j9plp/INFO/locust.main: Shutting down (exit code 0), bye.
+[2026-10-31 14:24:04,412] loadtest-stepped-j9plp/INFO/locust.main: Cleaning up runner...
+ Name                                                          # reqs      # fails  |     Avg     Min     Max  Median  |   req/s failures/s
+--------------------------------------------------------------------------------------------------------------------------------------------
+ GET /                                                           2504     4(0.16%)  |     732      21    2129     750  |   13.93    0.02
+ POST /cart                                                      1665     4(0.24%)  |    1187      29    3099    1200  |    9.26    0.02
+ GET /product/0PUK6V6EV0                                          635     1(0.16%)  |     591      65    2368     570  |    3.53    0.01
+ GET /product/1YMWWN1N4O                                          619     0(0.00%)  |     593      37    2381     570  |    3.44    0.00
+ GET /product/2ZYFJ3GM2N                                          622     0(0.00%)  |     588      18    2299     570  |    3.46    0.00
+ GET /product/66VCHSJNUP                                          662     1(0.15%)  |     593      18    2826     580  |    3.68    0.01
+ GET /product/6E92ZMYYFZ                                          661     0(0.00%)  |     588      18    1700     580  |    3.68    0.00
+ GET /product/9SIQT8TOJO                                          623     3(0.48%)  |     585     118    2667     580  |    3.47    0.02
+ GET /product/L9ECAV7KIM                                          640     0(0.00%)  |     589      44    2612     570  |    3.56    0.00
+ GET /product/LS4PSXUNUM                                          642     2(0.31%)  |     584      22    1995     580  |    3.57    0.01
+ GET /product/OLJCESPC7Z                                          645     1(0.16%)  |     593     100    2404     580  |    3.59    0.01
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregated                                                      9918    16(0.16%)  |     726      18    3099     650  |   55.19    0.09
+
+Response time percentiles (approximated)
+ Type     Name                                                              50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ GET      /                                                                 750    820    860    890    970   1000   1100   1100   2100   2100   2100   2504
+ POST     /cart                                                            1200   1300   1400   1400   1500   1600   1800   2000   3000   3100   3100   1665
+ GET      /product/0PUK6V6EV0                                               570    630    660    690    750    830   1000   1400   2400   2400   2400    635
+ GET      /product/1YMWWN1N4O                                               570    630    660    690    750    810    950   1800   2400   2400   2400    619
+ GET      /product/2ZYFJ3GM2N                                               570    630    670    690    760    800    920   1000   2300   2300   2300    622
+ GET      /product/66VCHSJNUP                                               580    640    670    700    770    850    910   1000   2800   2800   2800    662
+ GET      /product/6E92ZMYYFZ                                               580    630    670    700    780    820    950   1100   1700   1700   1700    661
+ GET      /product/9SIQT8TOJO                                               580    630    660    680    750    840    910    940   2700   2700   2700    623
+ GET      /product/L9ECAV7KIM                                               570    630    670    690    780    840    960   1200   2600   2600   2600    640
+ GET      /product/LS4PSXUNUM                                               580    630    660    690    760    830    910    980   2000   2000   2000    642
+ GET      /product/OLJCESPC7Z                                               580    640    680    700    780    850    960   1200   2400   2400   2400    645
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ None     Aggregated                                                        650    750    840    900   1200   1400   1500   1700   2600   3100   3100   9918
+
+Error report
+ # occurrences      Error                                                                                               
+--------------------------------------------------------------------------------------------------------------------------------------------
+ 1                  GET /product/0PUK6V6EV0: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 3                  GET /product/9SIQT8TOJO: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 2                  POST /cart: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 1                  GET /product/OLJCESPC7Z: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 4                  GET /: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 2                  POST /cart: "ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))"
+ 1                  GET /product/66VCHSJNUP: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 1                  GET /product/LS4PSXUNUM: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 1                  GET /product/LS4PSXUNUM: "ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))"
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+=== users=50 end 2026-10-31T14:24:04+00:00 ===
+=== users=100 start 2026-10-31T14:26:04+00:00 ===
+[2026-10-31 14:26:05,018] loadtest-stepped-j9plp/INFO/locust.main: Run time limit set to 180 seconds
+[2026-10-31 14:26:05,018] loadtest-stepped-j9plp/INFO/locust.main: Starting Locust 1.3.1
+[2026-10-31 14:26:05,019] loadtest-stepped-j9plp/INFO/locust.runners: Spawning 100 users at the rate 10 users/s (0 users already running)...
+[2026-10-31 14:26:15,025] loadtest-stepped-j9plp/INFO/locust.runners: All users spawned: WebsiteUser: 100 (0 already running)
+[2026-10-31 14:29:04,775] loadtest-stepped-j9plp/INFO/locust.main: Time limit reached. Stopping Locust.
+[2026-10-31 14:29:04,776] loadtest-stepped-j9plp/INFO/locust.runners: Stopping 100 users
+[2026-10-31 14:29:04,797] loadtest-stepped-j9plp/INFO/locust.runners: 100 Users have been stopped
+[2026-10-31 14:29:04,797] loadtest-stepped-j9plp/INFO/locust.main: Running teardowns...
+[2026-10-31 14:29:04,798] loadtest-stepped-j9plp/INFO/locust.main: Shutting down (exit code 0), bye.
+[2026-10-31 14:29:04,798] loadtest-stepped-j9plp/INFO/locust.main: Cleaning up runner...
+ Name                                                          # reqs      # fails  |     Avg     Min     Max  Median  |   req/s failures/s
+--------------------------------------------------------------------------------------------------------------------------------------------
+ GET /                                                           3100     6(0.19%)  |    1210      17    2415    1300  |   17.25    0.03
+ POST /cart                                                      1976     5(0.25%)  |    1996      19    4497    2000  |   11.00    0.03
+ GET /product/0PUK6V6EV0                                          723     2(0.28%)  |    1113     123    2273    1100  |    4.02    0.01
+ GET /product/1YMWWN1N4O                                          766     3(0.39%)  |    1122     118    3031    1100  |    4.26    0.02
+ GET /product/2ZYFJ3GM2N                                          759     1(0.13%)  |    1112     114    2619    1100  |    4.22    0.01
+ GET /product/66VCHSJNUP                                          744     1(0.13%)  |    1115      24    2133    1100  |    4.14    0.01
+ GET /product/6E92ZMYYFZ                                          786     2(0.25%)  |    1106     116    2599    1100  |    4.37    0.01
+ GET /product/9SIQT8TOJO                                          775     1(0.13%)  |    1112      57    2999    1100  |    4.31    0.01
+ GET /product/L9ECAV7KIM                                          768     5(0.65%)  |    1099     109    2591    1100  |    4.27    0.03
+ GET /product/LS4PSXUNUM                                          821     1(0.12%)  |    1096     122    3033    1100  |    4.57    0.01
+ GET /product/OLJCESPC7Z                                          791     2(0.25%)  |    1125     137    3140    1100  |    4.40    0.01
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregated                                                     12009    29(0.24%)  |    1282      17    4497    1200  |   66.84    0.16
+
+Response time percentiles (approximated)
+ Type     Name                                                              50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ GET      /                                                                1300   1400   1500   1500   1700   1800   1900   2000   2200   2400   2400   3100
+ POST     /cart                                                            2000   2200   2300   2300   2500   2700   2900   3000   4200   4500   4500   1976
+ GET      /product/0PUK6V6EV0                                              1100   1200   1300   1300   1500   1600   1800   1900   2300   2300   2300    723
+ GET      /product/1YMWWN1N4O                                              1100   1200   1300   1300   1500   1600   1800   1900   3000   3000   3000    766
+ GET      /product/2ZYFJ3GM2N                                              1100   1200   1300   1300   1500   1600   1800   1900   2600   2600   2600    759
+ GET      /product/66VCHSJNUP                                              1100   1200   1300   1300   1500   1600   1700   1900   2100   2100   2100    744
+ GET      /product/6E92ZMYYFZ                                              1100   1200   1300   1300   1500   1600   1700   1900   2600   2600   2600    786
+ GET      /product/9SIQT8TOJO                                              1100   1200   1300   1300   1500   1600   1800   2000   3000   3000   3000    775
+ GET      /product/L9ECAV7KIM                                              1100   1200   1300   1300   1400   1500   1700   1700   2600   2600   2600    768
+ GET      /product/LS4PSXUNUM                                              1100   1200   1300   1300   1500   1600   1700   1800   3000   3000   3000    821
+ GET      /product/OLJCESPC7Z                                              1100   1200   1300   1400   1500   1600   1700   1900   3100   3100   3100    791
+--------|------------------------------------------------------------|---------|------|------|------|------|------|------|------|------|------|------|------|
+ None     Aggregated                                                       1200   1400   1500   1600   2000   2200   2500   2600   3300   4200   4500  12009
+
+Error report
+ # occurrences      Error                                                                                               
+--------------------------------------------------------------------------------------------------------------------------------------------
+ 5                  GET /product/L9ECAV7KIM: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 1                  GET /product/2ZYFJ3GM2N: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 1                  GET /product/66VCHSJNUP: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 5                  POST /cart: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 6                  GET /: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 2                  GET /product/0PUK6V6EV0: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 2                  GET /product/OLJCESPC7Z: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 3                  GET /product/1YMWWN1N4O: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 2                  GET /product/6E92ZMYYFZ: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 1                  GET /product/9SIQT8TOJO: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+ 1                  GET /product/LS4PSXUNUM: "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+=== users=100 end 2026-10-31T14:29:04+00:00 ===

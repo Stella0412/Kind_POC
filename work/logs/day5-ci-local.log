@@ -1,0 +1,119 @@
+bash work/scripts/build-images.sh
+patched: D:/docker_project/work/docker/frontend/context/handlers.go
+98:	if os.Getenv("DISABLE_METADATA_DETECTION") != "1" {
+99:		mdAddrs, mdErr = net.LookupHost("metadata.google.internal.")
+build context ready: /d/docker_project/work/docker/frontend/context
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.day2
+#1 transferring dockerfile: 1.12kB 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/alpine:latest
+#2 DONE 12.2s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 49B done
+#3 DONE 0.0s
+
+#4 [builder 1/7] FROM docker.io/library/alpine:latest@sha256:be2656061b536c1883c4034790e21d0a09c5aaaf51968b89368a3c0371ea2c9a
+#4 resolve docker.io/library/alpine:latest@sha256:be2656061b536c1883c4034790e21d0a09c5aaaf51968b89368a3c0371ea2c9a 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 4.37MB 0.2s done
+#5 DONE 0.2s
+
+#6 [builder 6/7] COPY . .
+#6 CACHED
+
+#7 [release 5/6] COPY ./templates ./templates
+#7 CACHED
+
+#8 [builder 3/7] WORKDIR /src
+#8 CACHED
+
+#9 [release 4/6] COPY --from=builder /go/bin/frontend /src/server
+#9 CACHED
+
+#10 [release 3/6] WORKDIR /src
+#10 CACHED
+
+#11 [builder 7/7] RUN go build -gcflags="${SKAFFOLD_GO_GCFLAGS}" -o /go/bin/frontend .
+#11 CACHED
+
+#12 [builder 2/7] RUN apk add --no-cache go git build-base ca-certificates
+#12 CACHED
+
+#13 [builder 5/7] RUN go mod download
+#13 CACHED
+
+#14 [release 2/6] RUN apk add --no-cache ca-certificates
+#14 CACHED
+
+#15 [builder 4/7] COPY go.mod go.sum ./
+#15 CACHED
+
+#16 [release 6/6] COPY ./static ./static
+#16 CACHED
+
+#17 exporting to image
+#17 exporting layers done
+#17 exporting manifest sha256:28ea97e1e1ff6b50a9293f42e4971c9e00a16fb763788c510341e04a80f19efc done
+#17 exporting config sha256:66126207b0619a1aee1dac968827dc33894b12fa9ad3b2f91e20767b06f9c93e done
+#17 exporting attestation manifest sha256:62c774b661dab153cd3bac2075ad0475a96ebbd64a5703526e68f025ce5da05c 0.0s done
+#17 exporting manifest list sha256:96eca164f78a077ce4f78bac4a8a4757b212f41332b3067adbe93826ed9d7c60
+#17 exporting manifest list sha256:96eca164f78a077ce4f78bac4a8a4757b212f41332b3067adbe93826ed9d7c60 0.0s done
+#17 naming to docker.io/local/frontend:day2 done
+#17 unpacking to docker.io/local/frontend:day2 0.0s done
+#17 DONE 0.1s
+built and loaded local/frontend:day2
+bash work/scripts/deploy.sh
+Release "online-boutique" has been upgraded. Happy Helming!
+NAME: online-boutique
+LAST DEPLOYED: Sun Nov  1 09:40:27 2026
+NAMESPACE: qa-helm
+STATUS: deployed
+REVISION: 10
+DESCRIPTION: Upgrade complete
+TEST SUITE: None
+NOTES:
+Online Boutique 已部署到命名空间 qa-helm。
+
+查看状态：
+  kubectl get pods -n qa-helm
+  kubectl get endpoints -n qa-helm
+
+访问前端：
+  kubectl port-forward -n qa-helm svc/frontend 8080:80
+  浏览器打开 http://localhost:8080
+
+当前 frontend 镜像：
+  local/frontend:day2
+deployment "frontend" successfully rolled out
+bash work/scripts/smoke-test.sh
+SMOKE OK: homepage / product / cart / checkout
+bash work/scripts/verify.sh
+NAME                       STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION                      CONTAINER-RUNTIME
+qa-cluster-control-plane   Ready    control-plane   17h   v1.32.2   172.21.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+qa-cluster-worker          Ready    <none>          17h   v1.32.2   172.21.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.18.40.1-microsoft-standard-WSL2   containerd://2.0.3
+NAME                                     READY   STATUS      RESTARTS        AGE
+adservice-75968447cd-8ngn7               1/1     Running     3 (4m45s ago)   10h
+cartservice-77cb898dd4-vnktn             1/1     Running     1 (4m45s ago)   11h
+checkoutservice-674999b5c7-rt277         1/1     Running     1 (4m45s ago)   10h
+currencyservice-86f586d9c7-l682q         1/1     Running     1 (4m45s ago)   10h
+emailservice-7c575df669-v6j6d            1/1     Running     1 (4m45s ago)   10h
+frontend-6bc5cfbcd6-tj74z                1/1     Running     1 (4m45s ago)   11h
+loadgenerator-hfwrr                      0/1     Completed   0               12h
+loadtest-smoke-p2bp6                     0/1     Completed   0               10h
+loadtest-stepped-j9plp                   0/1     Completed   0               11h
+paymentservice-68dcddb59-fmlpq           1/1     Running     1 (4m45s ago)   10h
+productcatalogservice-84469965d9-7rtsk   1/1     Running     1 (4m45s ago)   10h
+recommendationservice-5d9cb49bbd-ljz99   1/1     Running     1 (4m45s ago)   10h
+redis-cart-5bc545b94-9cbll               1/1     Running     1 (4m45s ago)   11h
+shippingservice-6c465dd9c9-twvcf         1/1     Running     1 (4m45s ago)   10h
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          11h
+NAME           	NAMESPACE	REVISION	UPDATED                              	STATUS  	CHART                	APP VERSION
+online-boutique	qa-helm  	10      	2026-11-01 09:40:27.6172588 +0800 CST	deployed	online-boutique-0.1.0	0.3.4      
+VERIFY OK: all services have endpoints

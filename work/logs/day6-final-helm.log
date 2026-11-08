@@ -1,0 +1,2 @@
+NAME           	NAMESPACE	REVISION	UPDATED                              	STATUS  	CHART                	APP VERSION
+online-boutique	qa-helm  	1       	2026-11-01 10:01:02.8270414 +0800 CST	deployed	online-boutique-0.1.0	0.3.4      

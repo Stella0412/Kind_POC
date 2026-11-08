@@ -1,0 +1,33 @@
+=== 2026-10-31T22:51:32+08:00 ===
+--- pods ---
+NAME                                     READY   STATUS      RESTARTS   AGE
+adservice-75968447cd-8ngn7               1/1     Running     0          7m45s
+cartservice-77cb898dd4-vnktn             1/1     Running     0          54m
+checkoutservice-674999b5c7-rt277         1/1     Running     0          7m45s
+currencyservice-86f586d9c7-l682q         1/1     Running     0          7m45s
+emailservice-7c575df669-v6j6d            1/1     Running     0          7m45s
+frontend-6bc5cfbcd6-tj74z                1/1     Running     0          49m
+loadgenerator-hfwrr                      0/1     Completed   0          101m
+loadtest-stepped-j9plp                   0/1     Completed   0          35m
+paymentservice-68dcddb59-fmlpq           1/1     Running     0          7m45s
+productcatalogservice-84469965d9-7rtsk   1/1     Running     0          7m45s
+recommendationservice-5d9cb49bbd-ljz99   1/1     Running     0          7m45s
+redis-cart-5bc545b94-9cbll               1/1     Running     0          54m
+shippingservice-6c465dd9c9-twvcf         1/1     Running     0          7m45s
+--- hpa ---
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   cpu: 1%/50%   1         4         1          52m
+--- top nodes ---
+NAME                       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+qa-cluster-control-plane   133m         0%       652Mi           8%          
+qa-cluster-worker          405m         1%       1386Mi          17%         
+--- warnings ---
+23m         Warning   Unhealthy              pod/adservice-5dd86985cc-nqkk9               Readiness probe failed:
+7m41s       Warning   Unhealthy              pod/paymentservice-68dcddb59-fmlpq           Readiness probe failed: timeout: failed to connect service ":50051" within 1s
+7m41s       Warning   Unhealthy              pod/emailservice-7c575df669-v6j6d            Readiness probe failed: timeout: failed to connect service ":8080" within 1s
+7m41s       Warning   Unhealthy              pod/recommendationservice-5d9cb49bbd-ljz99   Readiness probe failed: timeout: failed to connect service ":8080" within 1s
+7m41s       Warning   Unhealthy              pod/currencyservice-86f586d9c7-l682q         Readiness probe failed: timeout: failed to connect service ":7000" within 1s
+7m18s       Warning   Unhealthy              pod/adservice-75968447cd-8ngn7               Startup probe failed: timeout: failed to connect service ":9555" within 1s
+--- revision ---
+7       	Sat Oct 31 21:59:06 2026	superseded	online-boutique-0.1.0	0.3.4      	Upgrade complete
+8       	Sat Oct 31 22:43:47 2026	deployed  	online-boutique-0.1.0	0.3.4      	Upgrade complete

@@ -1,0 +1,12 @@
+Online Boutique 已部署到命名空间 {{ .Release.Namespace }}。
+
+查看状态：
+  kubectl get pods -n {{ .Release.Namespace }}
+  kubectl get endpoints -n {{ .Release.Namespace }}
+
+访问前端：
+  kubectl port-forward -n {{ .Release.Namespace }} svc/frontend 8080:80
+  浏览器打开 http://localhost:8080
+
+当前 frontend 镜像：
+  {{ (index .Values.services "frontend").image.repository }}:{{ (index .Values.services "frontend").image.tag }}

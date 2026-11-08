@@ -1,0 +1,12 @@
+NAME                    ENDPOINTS          AGE
+adservice               10.244.1.6:9555    81s
+cartservice             10.244.1.8:7070    81s
+checkoutservice         10.244.1.11:5050   81s
+currencyservice         10.244.1.7:7000    81s
+emailservice            10.244.1.12:8080   81s
+frontend                10.244.1.14:8080   81s
+paymentservice          10.244.1.4:50051   81s
+productcatalogservice   10.244.1.9:3550    81s
+recommendationservice   10.244.1.13:8080   81s
+redis-cart              10.244.1.10:6379   81s
+shippingservice         10.244.1.5:50051   81s

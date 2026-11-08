@@ -1,0 +1,14 @@
+NAME                                     READY   STATUS        RESTARTS      AGE
+adservice-58c8d74f7b-f2v8q               1/1     Terminating   2 (15m ago)   82m
+adservice-5dd86985cc-nqkk9               1/1     Running       0             31s
+cartservice-77cb898dd4-vnktn             1/1     Running       0             31s
+checkoutservice-8d78b849-gbzmb           1/1     Running       0             31s
+currencyservice-6cfc68c877-b2ttg         1/1     Running       0             31s
+emailservice-f89bf4f59-5jq8f             1/1     Running       0             31s
+frontend-6bc5cfbcd6-9hxnk                1/1     Running       0             31s
+loadgenerator-hfwrr                      0/1     Completed     0             47m
+paymentservice-77ff746969-25mpv          1/1     Running       0             31s
+productcatalogservice-57df9487b5-dh95f   1/1     Running       0             31s
+recommendationservice-6d9577546f-p46p8   1/1     Running       0             31s
+redis-cart-5bc545b94-9cbll               1/1     Running       0             31s
+shippingservice-54fb69d77-f794t          1/1     Running       0             31s

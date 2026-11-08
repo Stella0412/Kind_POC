@@ -1,0 +1,11 @@
+adservice-75968447cd-mpjlx restarts=2
+cartservice-77cb898dd4-sfdph restarts=0
+checkoutservice-674999b5c7-d7glm restarts=0
+currencyservice-86f586d9c7-cxcdt restarts=0
+emailservice-7c575df669-xck6r restarts=0
+frontend-769c57d47d-w2wt2 restarts=0
+paymentservice-68dcddb59-xjzld restarts=0
+productcatalogservice-84469965d9-5z8sd restarts=0
+recommendationservice-5d9cb49bbd-tflmc restarts=0
+redis-cart-5bc545b94-76j9s restarts=0
+shippingservice-6c465dd9c9-mnghn restarts=0
