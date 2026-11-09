@@ -1,4 +1,4 @@
-# Docker + Kubernetes 售前项目实验环境
+# Docker + Kubernetes 项目实验环境
 
 目标：完成 Online Boutique 11 个微服务在本地 Kind 集群的部署与排障、
 Docker 镜像构建、Helm 封装，并产出可演示的 POC 材料和简历项目。
